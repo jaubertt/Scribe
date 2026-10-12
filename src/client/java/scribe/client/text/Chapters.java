@@ -6,6 +6,7 @@ import net.minecraft.client.gui.Font;
 import net.minecraft.network.chat.Component;
 
 import scribe.ContentsLinks;
+import scribe.PageText;
 import scribe.client.widget.PageTextField;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +15,7 @@ import org.jspecify.annotations.Nullable;
 public final class Chapters {
 	public static final String MARK = FormatCodes.SECTION + "#";
 	public static final String CONTENTS_MARK = ContentsLinks.MARK;
-	private static final char MARK_LETTER = '#';
+	private static final char MARK_LETTER = PageText.CHAPTER_MARK;
 
 	private Chapters() {
 	}
@@ -24,42 +25,18 @@ public final class Chapters {
 
 	public static List<Chapter> find(List<String> pages) {
 		List<Chapter> out = new ArrayList<>();
-		for (int p = 0; p < pages.size(); p++) {
-			String text = pages.get(p);
-			if (isContentsPage(text)) {
-				continue;
-			}
-			int start = 0;
-			while (true) {
-				int end = paragraphEnd(text, start);
-				if (hasMark(text, start, end)) {
-					String title = FormatCodes.strip(PageCodec.decodeText(text.substring(start, end))).strip();
-					if (!title.isEmpty()) {
-						out.add(new Chapter(p, start, title));
-					}
-				}
-				if (end >= text.length()) {
-					break;
-				}
-				start = end + 1;
-			}
+		for (PageText.Heading heading : PageText.headings(pages)) {
+			out.add(new Chapter(heading.page(), heading.start(), heading.title()));
 		}
 		return out;
 	}
 
 	public static boolean hasMark(String text, int start, int end) {
-		int i = start;
-		while (i + 1 < end && FormatCodes.isCodeAt(text, i)) {
-			if (text.charAt(i + 1) == MARK_LETTER) {
-				return true;
-			}
-			i += 2;
-		}
-		return false;
+		return PageText.hasChapterMark(text, start, end);
 	}
 
 	public static boolean isContentsPage(String page) {
-		return page.startsWith(CONTENTS_MARK);
+		return PageText.isContentsPage(page);
 	}
 
 	public static boolean startsWithChapter(String page) {
@@ -132,17 +109,7 @@ public final class Chapters {
 	}
 
 	public static int paragraphEnd(String text, int index) {
-		int from = Math.clamp(index, 0, text.length());
-		while (true) {
-			int nl = text.indexOf('\n', from);
-			if (nl < 0) {
-				return text.length();
-			}
-			if (!PageCodec.isInsertedBreak(text, nl)) {
-				return nl;
-			}
-			from = nl + 1;
-		}
+		return PageText.paragraphEnd(text, index);
 	}
 
 	public static FormatCodes.Edit toggle(String text, int caret) {

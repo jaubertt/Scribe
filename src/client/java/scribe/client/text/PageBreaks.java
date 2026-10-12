@@ -2,10 +2,11 @@ package scribe.client.text;
 
 import java.util.ArrayList;
 import java.util.List;
+import scribe.PageText;
 
 public final class PageBreaks {
-	public static final char SOFT_MARK = '+';
-	public static final char NEWLINE_MARK = '&';
+	public static final char SOFT_MARK = PageText.SOFT_MARK;
+	public static final char NEWLINE_MARK = PageText.NEWLINE_MARK;
 	public static final String SOFT = FormatCodes.SECTION + String.valueOf(SOFT_MARK);
 	public static final String SOFT_NEWLINE = FormatCodes.SECTION + String.valueOf(NEWLINE_MARK);
 
@@ -35,7 +36,7 @@ public final class PageBreaks {
 	}
 
 	public static boolean isMark(char c) {
-		return c == SOFT_MARK || c == NEWLINE_MARK;
+		return PageText.isPageBreakMark(c);
 	}
 
 	public static Kind markOf(String page) {

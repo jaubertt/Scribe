@@ -68,6 +68,7 @@ public final class LookAtTooltip {
 	private static final int HUD_GAP = 1;
 	private static final int BELOW_CROSSHAIR = 13;
 	private static final String LEVEL_KEY = "enchantment.level.";
+	private static final String COUNT_KEY = "scribe.tooltip.pages.";
 	private static final String CUT = "...";
 
 	private LookAtTooltip() {
@@ -245,12 +246,17 @@ public final class LookAtTooltip {
 	}
 
 	public static void cutShort(List<Component> lines) {
-		if (lines.size() > MAX_LINES) {
-			int kept = keptLines(blockSizes(lines), MAX_LINES - 1);
+		int max = MAX_LINES + (lines.stream().anyMatch(LookAtTooltip::isCountLine) ? 1 : 0);
+		if (lines.size() > max) {
+			int kept = keptLines(blockSizes(lines), max - 1);
 			int hidden = lines.size() - kept;
 			lines.subList(kept, lines.size()).clear();
 			lines.add(Component.translatable("scribe.look.more", hidden).withStyle(ChatFormatting.GRAY));
 		}
+	}
+
+	public static boolean isCountLine(Component line) {
+		return line.getContents() instanceof TranslatableContents translatable && translatable.getKey().startsWith(COUNT_KEY);
 	}
 
 	public static List<Integer> blockSizes(List<Component> lines) {

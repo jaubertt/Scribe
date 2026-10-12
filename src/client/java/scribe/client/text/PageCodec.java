@@ -1,26 +1,26 @@
 package scribe.client.text;
 
 import scribe.BookLimits;
+import scribe.PageText;
 import java.util.ArrayList;
 import java.util.List;
 import net.minecraft.client.gui.Font;
 import net.minecraft.network.chat.Style;
 
 public final class PageCodec {
-	public static final char PAD_MARK = '_';
-	public static final char BREAK_SPACE_MARK = '/';
-	public static final char BREAK_WORD_MARK = '|';
+	public static final char PAD_MARK = PageText.PAD_MARK;
+	public static final char BREAK_SPACE_MARK = PageText.BREAK_SPACE_MARK;
+	public static final char BREAK_WORD_MARK = PageText.BREAK_WORD_MARK;
 
 	private PageCodec() {
 	}
 
 	public static boolean isBreakMark(char c) {
-		return c == BREAK_SPACE_MARK || c == BREAK_WORD_MARK;
+		return PageText.isBreakMark(c);
 	}
 
 	public static boolean isInsertedBreak(String text, int index) {
-		return index >= 2 && index < text.length() && text.charAt(index) == '\n'
-			&& isBreakMark(text.charAt(index - 1)) && FormatCodes.isCodeAt(text, index - 2);
+		return PageText.isInsertedBreak(text, index);
 	}
 
 	public static String encodeText(Font font, String text) {
@@ -100,46 +100,6 @@ public final class PageCodec {
 	}
 
 	public static String decodeText(String saved) {
-		if (saved.indexOf(FormatCodes.SECTION) < 0) {
-			return saved;
-		}
-		StringBuilder out = new StringBuilder(saved.length());
-		int rowStart = 0;
-		for (int i = 0; i < saved.length(); i++) {
-			char c = saved.charAt(i);
-			if (c == '\n') {
-				out.append(c);
-				rowStart = out.length();
-				continue;
-			}
-			if (!FormatCodes.isCodeAt(saved, i)) {
-				out.append(c);
-				continue;
-			}
-			char code = saved.charAt(i + 1);
-			if (isBreakMark(code)) {
-				if (i + 2 < saved.length() && saved.charAt(i + 2) == '\n') {
-					if (code == BREAK_SPACE_MARK) {
-						out.append(' ');
-					}
-					i++;
-					rowStart = out.length();
-				}
-				i++;
-			} else if (code == PAD_MARK) {
-				int keep = out.length();
-				while (keep > rowStart && out.charAt(keep - 1) == ' ') {
-					keep--;
-				}
-				out.setLength(keep);
-				i++;
-			} else if (PageBreaks.isMark(code)) {
-				i++;
-			} else {
-				out.append(c).append(code);
-				i++;
-			}
-		}
-		return out.toString();
+		return PageText.decodeText(saved);
 	}
 }

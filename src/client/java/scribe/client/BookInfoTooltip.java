@@ -1,11 +1,10 @@
 package scribe.client;
 
+import scribe.BookSize;
 import scribe.binding.Binding;
 import scribe.binding.Bookbinding;
 import scribe.binding.Clasp;
 import scribe.binding.CoverDesign;
-import scribe.client.text.Chapters;
-import scribe.client.text.FormatCodes;
 import java.util.ArrayList;
 import java.util.List;
 import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
@@ -21,10 +20,8 @@ import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.contents.TranslatableContents;
-import net.minecraft.server.network.Filterable;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.component.WritableBookContent;
 import net.minecraft.world.item.component.WrittenBookContent;
 import org.jspecify.annotations.Nullable;
 
@@ -158,30 +155,11 @@ public final class BookInfoTooltip {
 			: Component.translatable("scribe.tooltip.corners", Component.translatable("scribe.corner." + corner));
 	}
 
-	private static @Nullable Object lastContent;
-	private static @Nullable Component lastLine;
-
 	private static @Nullable Component count(ItemStack stack) {
-		Object content = stack.has(DataComponents.WRITTEN_BOOK_CONTENT) ? stack.get(DataComponents.WRITTEN_BOOK_CONTENT)
-			: stack.get(DataComponents.WRITABLE_BOOK_CONTENT);
-		if (content == null) {
-			return null;
+		BookSize size = BookSize.of(stack);
+		if (size == null) {
+			size = BookSize.shared(stack);
 		}
-		if (content != lastContent) {
-			lastContent = content;
-			List<String> pages = new ArrayList<>();
-			if (content instanceof WrittenBookContent written) {
-				for (Filterable<Component> page : written.pages()) {
-					pages.add(FormatCodes.toLegacy(page.raw()));
-				}
-			} else if (content instanceof WritableBookContent writable) {
-				for (Filterable<String> page : writable.pages()) {
-					pages.add(page.raw());
-				}
-			}
-			boolean empty = pages.stream().allMatch(page -> FormatCodes.strip(page).isBlank());
-			lastLine = empty ? null : countLine(pages.size(), Chapters.find(pages).size());
-		}
-		return lastLine;
+		return size == null ? null : countLine(size.pages(), size.chapters());
 	}
 }

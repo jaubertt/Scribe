@@ -1,24 +1,23 @@
 package scribe.client.text;
 
-import java.util.Optional;
 import java.util.function.UnaryOperator;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.FormattedText;
 import net.minecraft.network.chat.Style;
-import net.minecraft.network.chat.TextColor;
+import scribe.PageText;
 
 public final class FormatCodes {
-	public static final char SECTION = '§';
-	public static final String COLOR_CODES = "0123456789abcdef";
-	public static final String STYLE_CODES = "klmno";
+	public static final char SECTION = PageText.SECTION;
+	public static final String COLOR_CODES = PageText.COLOR_CODES;
+	public static final String STYLE_CODES = PageText.STYLE_CODES;
 	public static final char RESET = 'r';
-	public static final String MARKERS = "#*=>+&_/|";
+	public static final String MARKERS = PageText.MARKERS;
 
 	private FormatCodes() {
 	}
 
 	public static boolean isCode(char c) {
-		return ChatFormatting.getByCode(c) != null || MARKERS.indexOf(c) >= 0;
+		return PageText.isCode(c);
 	}
 
 	public static boolean isMarker(char c) {
@@ -34,11 +33,7 @@ public final class FormatCodes {
 	}
 
 	private static boolean hiddenBySectionBefore(String s, int index) {
-		int run = 0;
-		for (int j = index - 1; j >= 0 && s.charAt(j) == SECTION; j--) {
-			run++;
-		}
-		return (run & 1) == 1;
+		return PageText.hiddenBySectionBefore(s, index);
 	}
 
 	public static boolean startsPair(String s, int index) {
@@ -46,11 +41,7 @@ public final class FormatCodes {
 	}
 
 	public static boolean isCodeAt(String s, int index) {
-		return index >= 0
-			&& index + 1 < s.length()
-			&& s.charAt(index) == SECTION
-			&& isCode(s.charAt(index + 1))
-			&& !hiddenBySectionBefore(s, index);
+		return PageText.isCodeAt(s, index);
 	}
 
 	public static boolean splitsCode(String s, int index) {
@@ -80,22 +71,11 @@ public final class FormatCodes {
 	}
 
 	public static int rgb(char colorCode) {
-		ChatFormatting format = ChatFormatting.getByCode(colorCode);
-		TextColor color = format == null ? null : TextColor.fromLegacyFormat(format);
-		return color == null ? 0x000000 : color.getValue();
+		return PageText.rgb(colorCode);
 	}
 
 	public static String strip(String s) {
-		StringBuilder out = new StringBuilder(s.length());
-		for (int i = 0; i < s.length(); i++) {
-			char c = s.charAt(i);
-			if (c == SECTION) {
-				i++;
-			} else {
-				out.append(c);
-			}
-		}
-		return out.toString();
+		return PageText.strip(s);
 	}
 
 	public record State(char color, int styles) {
@@ -413,46 +393,10 @@ public final class FormatCodes {
 	}
 
 	public static String toLegacy(FormattedText text) {
-		StringBuilder out = new StringBuilder();
-		State[] written = {State.EMPTY};
-		text.visit((style, contents) -> {
-			State wanted = stateOf(style);
-			out.append(transition(written[0], wanted));
-			written[0] = apply(wanted, contents);
-			out.append(contents);
-			return Optional.empty();
-		}, Style.EMPTY);
-		return out.toString();
-	}
-
-	private static State stateOf(Style style) {
-		State state = State.EMPTY;
-		TextColor color = style.getColor();
-		if (color != null) {
-			state = state.withColor(nearestColorCode(color.getValue()));
-		}
-		if (style.isObfuscated()) state = state.with('k');
-		if (style.isBold()) state = state.with('l');
-		if (style.isStrikethrough()) state = state.with('m');
-		if (style.isUnderlined()) state = state.with('n');
-		if (style.isItalic()) state = state.with('o');
-		return state;
+		return PageText.toLegacy(text);
 	}
 
 	public static char nearestColorCode(int rgb) {
-		char best = '0';
-		long bestDistance = Long.MAX_VALUE;
-		for (char code : COLOR_CODES.toCharArray()) {
-			int other = rgb(code);
-			long dr = ((rgb >> 16) & 0xFF) - ((other >> 16) & 0xFF);
-			long dg = ((rgb >> 8) & 0xFF) - ((other >> 8) & 0xFF);
-			long db = (rgb & 0xFF) - (other & 0xFF);
-			long distance = dr * dr + dg * dg + db * db;
-			if (distance < bestDistance) {
-				bestDistance = distance;
-				best = code;
-			}
-		}
-		return best;
+		return PageText.nearestColorCode(rgb);
 	}
 }

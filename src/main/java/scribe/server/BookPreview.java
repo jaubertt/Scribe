@@ -1,6 +1,7 @@
 package scribe.server;
 
 import java.util.List;
+import scribe.BookSize;
 import scribe.RealAuthor;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.component.DataComponents;
@@ -31,6 +32,7 @@ public final class BookPreview {
 				new WrittenBookContent(written.title(), written.author(), written.generation(), List.of(), written.resolved()));
 			RealAuthor.copyPenName(stack, preview);
 		}
+		BookSize.share(stack, preview);
 		return preview;
 	}
 
