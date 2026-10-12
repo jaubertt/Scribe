@@ -1,24 +1,15 @@
-# Scribe | Book and Writing Mod
+# Scribe | Books and Writing Mod
 
 By Jaubert.
 
-Write, format and read books comfortably in Minecraft. Books stay plain vanilla books, so they work on every server and for players without the mod.
+All-in-One Book Mod for Book Lovers and Writers
+Writing utilities and book customization. Write, format and read books with chapters and bookmarks, personalize them with dyes, covers, trims and buckles, and place books and ink pots in your world.
 
 ## Requirements
 
-- Minecraft 26.3
 - Fabric Loader 0.19.5 or newer
-- Fabric API 0.161.0+26.3
-- Java 25
 - Optional: Mod Menu, for a settings button in the mod list
 
-## Building
-
-The jar is built by Gradle into build/libs/scribe-1.0.0+26.3.jar:
-
-```
-./gradlew build
-```
 
 ## Project layout
 
