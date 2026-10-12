@@ -50,7 +50,6 @@ public final class ScribeConfig {
 	public boolean lookAtTooltips = true;
 	public boolean lookAtLecterns = true;
 	public boolean lookAtChiseledBookshelves = true;
-	public boolean lookAtShelves = true;
 	public boolean lookAtPlacedBooks = true;
 	public LevelNumerals lookAtLevels = LevelNumerals.ROMAN;
 	public TextSize lookAtSize = TextSize.NORMAL;

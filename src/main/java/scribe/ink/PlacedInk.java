@@ -73,7 +73,7 @@ public final class PlacedInk {
 	}
 
 	static void init() {
-		Scribe.LOGGER.debug("Placed ink pots are saved as {}", Saved.POT.identifier());
+		Scribe.LOGGER.debug("Placed ink bottles are saved as {}", Saved.POT.identifier());
 		ItemEvents.USE_ON.register(PlacedInk::useOn);
 		UseEntityCallback.EVENT.register(PlacedInk::useEntity);
 		AttackEntityCallback.EVENT.register(PlacedInk::attack);

@@ -34,7 +34,7 @@ public final class SettingsPresets {
 
 	private static final String[] LOOKS = {"personalization", "covers", "tint", "item_icons"};
 	private static final String[] WORLD = {"world_books", "lectern_look", "closed_books", "table_look", "shelf_colors", "reading_pose", "bookmarks",
-		"reading_librarians", "look_at", "look_lecterns", "look_chiseled", "look_shelves", "look_placed"};
+		"reading_librarians", "look_at", "look_lecterns", "look_chiseled", "look_placed"};
 
 	private SettingsPresets() {
 	}

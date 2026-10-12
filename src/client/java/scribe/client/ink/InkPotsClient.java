@@ -1,14 +1,11 @@
 package scribe.client.ink;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import java.util.ArrayList;
-import java.util.List;
 import net.fabricmc.fabric.api.client.rendering.v1.FabricRenderState;
 import net.fabricmc.fabric.api.client.rendering.v1.RenderStateDataKey;
 import net.fabricmc.fabric.api.client.rendering.v1.level.LevelExtractionContext;
 import net.fabricmc.fabric.api.client.rendering.v1.level.LevelExtractionEvents;
 import net.fabricmc.fabric.api.event.player.ItemEvents;
-import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.client.renderer.GameRenderer;
@@ -17,7 +14,6 @@ import net.minecraft.client.renderer.entity.state.DisplayEntityRenderState;
 import net.minecraft.client.renderer.entity.state.ItemDisplayEntityRenderState;
 import net.minecraft.client.renderer.state.level.LevelRenderState;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Display;
@@ -134,19 +130,6 @@ public final class InkPotsClient {
 			}
 		}
 		return ItemStack.EMPTY;
-	}
-
-	public static List<Component> lookLines(ItemStack copy) {
-		List<Component> lines = new ArrayList<>();
-		if (copy.isEmpty()) {
-			return lines;
-		}
-		lines.add(copy.getStyledHoverName());
-		PlacedInk.Shown shown = PlacedInk.shownOf(copy);
-		if (shown != null && shown.open()) {
-			lines.add(Component.translatable("scribe.look.quill").withStyle(ChatFormatting.GRAY));
-		}
-		return lines;
 	}
 
 	public record Outline(Vec3 anchor, boolean highContrast) {

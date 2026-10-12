@@ -3,7 +3,7 @@
 By Jaubert.
 
 All-in-One Book Mod for Book Lovers and Writers
-Writing utilities and book customization. Write, format and read books with chapters and bookmarks, personalize them with dyes, covers, trims and buckles, and place books and ink pots in your world.
+Writing utilities and book customization. Write, format and read books with chapters and bookmarks, personalize them with dyes, covers, trims and buckles, and place books and ink bottles in your world.
 
 ## Requirements
 

@@ -117,7 +117,6 @@ public final class SettingsLayout {
 		client("look_lecterns", c -> c.lookAtLecterns, (c, v) -> c.lookAtLecterns = v, "look_at", "server_book_info");
 		client("look_chiseled", c -> c.lookAtChiseledBookshelves, (c, v) -> c.lookAtChiseledBookshelves = v, "look_at", "server_book_info",
 			MOD + OtherMods.SHELF_VISUALIZER, MOD + OtherMods.BOOKSHELF_INSPECTOR);
-		client("look_shelves", c -> c.lookAtShelves, (c, v) -> c.lookAtShelves = v, "look_at");
 		client("look_placed", c -> c.lookAtPlacedBooks, (c, v) -> c.lookAtPlacedBooks = v, "look_at");
 		needs("look_levels", "look_at");
 		needs("look_size", "look_at");
@@ -189,8 +188,7 @@ public final class SettingsLayout {
 				row(toggle("reading_pose"), toggle("reading_librarians")),
 				row(toggle("bookmarks")),
 				row(toggle("look_at"), toggle("look_lecterns")),
-				row(toggle("look_chiseled"), toggle("look_shelves")),
-				row(toggle("look_placed")),
+				row(toggle("look_chiseled"), toggle("look_placed")),
 				row(choice("look_levels"), choice("look_size")),
 				note(WORLD_BOOKS),
 				row(toggle("server_closed_lecterns"), toggle("server_enchanted_lecterns")),

@@ -46,18 +46,15 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.ItemEnchantments;
 import net.minecraft.world.level.block.ChiseledBookShelfBlock;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
-import net.minecraft.world.level.block.ShelfBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.ChiseledBookShelfBlockEntity;
 import net.minecraft.world.level.block.entity.LecternBlockEntity;
-import net.minecraft.world.level.block.entity.ShelfBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.entity.Interaction;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import scribe.client.compat.OtherMods;
-import scribe.client.ink.InkPotsClient;
 import scribe.client.placed.PlacedBooksClient;
 import org.jspecify.annotations.Nullable;
 
@@ -90,8 +87,7 @@ public final class LookAtTooltip {
 		if (minecraft.hitResult instanceof BlockHitResult hit && hit.getType() == HitResult.Type.BLOCK) {
 			lines = lines(minecraft, hit, config);
 		} else if (minecraft.hitResult instanceof EntityHitResult hit && hit.getEntity() instanceof Interaction box) {
-			ItemStack pot = config.lookAtPlacedBooks ? InkPotsClient.potOf(minecraft.level, box) : ItemStack.EMPTY;
-			lines = !pot.isEmpty() ? inkLines(pot) : config.lookAtPlacedBooks ? placedLines(PlacedBooksClient.aimedBook(minecraft.level, box, hit.getLocation()),
+			lines = config.lookAtPlacedBooks ? placedLines(PlacedBooksClient.aimedBook(minecraft.level, box, hit.getLocation()),
 				Item.TooltipContext.of(minecraft.level), minecraft.player) : Lines.NONE;
 		} else {
 			return;
@@ -135,29 +131,12 @@ public final class LookAtTooltip {
 			List<Component> all = bookLines(book, null, context, minecraft.player);
 			return new Lines(all, compactLines(book, all, -1, 0, context));
 		}
-		if (entity instanceof ShelfBlockEntity shelf) {
-			if (!config.lookAtShelves) {
-				return Lines.NONE;
-			}
-			OptionalInt slot = shelfSlot(state, hit);
-			if (slot.isEmpty()) {
-				return Lines.NONE;
-			}
-			ItemStack item = shelf.getItem(slot.getAsInt());
-			List<Component> all = shelfLines(item, context, minecraft.player);
-			return new Lines(all, compactLines(item, all, -1, 0, context));
-		}
 		return Lines.NONE;
 	}
 
 	public static Lines placedLines(ItemStack book, Item.TooltipContext context, @Nullable Player player) {
 		List<Component> all = bookLines(book, null, context, player);
 		return new Lines(all, compactLines(book, all, -1, 0, context));
-	}
-
-	public static Lines inkLines(ItemStack pot) {
-		List<Component> all = InkPotsClient.lookLines(pot);
-		return new Lines(all, all);
 	}
 
 	public static Lines lecternLines(ItemStack book, int page, int pages, Item.TooltipContext context, @Nullable Player player) {
@@ -263,44 +242,6 @@ public final class LookAtTooltip {
 			}
 		}
 		return HolderSet.empty();
-	}
-
-	public static OptionalInt shelfSlot(BlockState state, BlockHitResult hit) {
-		if (state.getBlock() instanceof ShelfBlock shelf && state.hasProperty(ShelfBlock.FACING)) {
-			return shelf.getHitSlot(hit, state.getValue(ShelfBlock.FACING));
-		}
-		return OptionalInt.empty();
-	}
-
-	public static List<Component> shelfLines(ItemStack item, Item.TooltipContext context, @Nullable Player player) {
-		if (item.isEmpty()) {
-			return List.of();
-		}
-		List<Component> lines;
-		if (BookInfoTooltip.isBook(item)) {
-			lines = new ArrayList<>(item.getTooltipLines(context, player, TooltipFlag.NORMAL));
-		} else {
-			TooltipDisplay display = item.getOrDefault(DataComponents.TOOLTIP_DISPLAY, TooltipDisplay.DEFAULT);
-			if (display.hideTooltip()) {
-				return List.of();
-			}
-			lines = new ArrayList<>();
-			lines.add(item.getStyledHoverName());
-			item.addToTooltip(DataComponents.STORED_ENCHANTMENTS, context, display, lines::add, TooltipFlag.NORMAL);
-			item.addToTooltip(DataComponents.ENCHANTMENTS, context, display, lines::add, TooltipFlag.NORMAL);
-		}
-		if (lines.isEmpty()) {
-			return List.of();
-		}
-		if (item.getCount() > 1) {
-			lines.set(0, withCount(lines.getFirst(), item.getCount()));
-		}
-		cutShort(lines);
-		return lines;
-	}
-
-	public static Component withCount(Component name, int count) {
-		return Component.translatable("scribe.look.count", name, count).withStyle(ChatFormatting.GRAY);
 	}
 
 	public static void cutShort(List<Component> lines) {
