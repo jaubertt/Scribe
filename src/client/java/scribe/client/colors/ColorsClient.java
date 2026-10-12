@@ -2,7 +2,6 @@ package scribe.client.colors;
 
 import scribe.EnchantedBooks;
 import scribe.Scribe;
-import scribe.access.BookPreviews;
 import scribe.binding.Binding;
 import scribe.binding.Bookbinding;
 import scribe.binding.Clasp;
@@ -11,29 +10,24 @@ import scribe.client.Looks;
 import scribe.client.mixin.ConditionalItemModelPropertiesAccessor;
 import scribe.client.mixin.ItemTintSourcesAccessor;
 import scribe.client.mixin.RangeSelectItemModelPropertiesAccessor;
-import scribe.config.ScribeConfig;
 import scribe.colors.BookColors;
-import scribe.colors.ColoredBlockEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.IntStream;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockColorRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.PictureInPictureRendererRegistry;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.color.block.BlockTintSource;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.object.book.BookModel;
 import net.minecraft.client.renderer.SubmitNodeCollector;
 import net.minecraft.client.renderer.blockentity.EnchantTableRenderer;
-import net.minecraft.client.renderer.block.BlockAndTintGetter;
 import net.minecraft.client.renderer.rendertype.RenderTypes;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.client.renderer.texture.TextureAtlas;
 import net.minecraft.client.resources.model.sprite.SpriteGetter;
 import net.minecraft.client.resources.model.sprite.SpriteId;
-import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.TextColor;
@@ -43,8 +37,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.component.WrittenBookContent;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.state.BlockState;
 import org.jspecify.annotations.Nullable;
 
 public final class ColorsClient {
@@ -75,8 +67,6 @@ public final class ColorsClient {
 	public static final Identifier GUI_BOOK = Scribe.id("textures/gui/tinted/book.png");
 	public static final Identifier GUI_BOOK_OVERLAY = Scribe.id("textures/gui/tinted/book_overlay.png");
 
-	private static final List<BlockTintSource> SHELF_TINTS = IntStream.range(0, 6).mapToObj(ColorsClient::shelfTint).toList();
-
 	private static final String[] MCBV_SHELVES = {
 		"spruce", "birch", "jungle", "acacia", "dark_oak", "pale_oak", "mangrove", "cherry", "bamboo", "crimson", "warped"
 	};
@@ -91,12 +81,13 @@ public final class ColorsClient {
 		ItemTintSourcesAccessor.scribe$idMapper().put(Scribe.id("ribbon"), RibbonTint.MAP_CODEC);
 		ConditionalItemModelPropertiesAccessor.scribe$idMapper().put(Scribe.id("book_icons"), BookIconsProperty.MAP_CODEC);
 		Looks.init();
-		BlockColorRegistry.register(SHELF_TINTS, Blocks.CHISELED_BOOKSHELF);
+		PictureInPictureRendererRegistry.register(context -> new DyedBookPictureRenderer());
+		BlockColorRegistry.register(ShelfTint.SLOTS, Blocks.CHISELED_BOOKSHELF);
 		List<Block> mcbvShelves = new ArrayList<>();
 		if (FabricLoader.getInstance().isModLoaded("lolmcbv")) {
 			for (String wood : MCBV_SHELVES) {
 				BuiltInRegistries.BLOCK.getOptional(Identifier.fromNamespaceAndPath("lolmcbv", wood + "_chiseled_bookshelf")).ifPresent(block -> {
-					BlockColorRegistry.register(SHELF_TINTS, new Block[] {block});
+					BlockColorRegistry.register(ShelfTint.SLOTS, new Block[] {block});
 					mcbvShelves.add(block);
 				});
 			}
@@ -280,21 +271,6 @@ public final class ColorsClient {
 			return new LecternLook(lecternCover(preview, stored), EnchantedBooks.is(preview) && preview.hasFoil(), lecternMetal(preview),
 				lecternStrap(preview), lecternClasp(preview), lecternTitle(preview), lecternSpine(preview));
 		}
-
-		public static LecternLook from(ColoredRenderState state) {
-			return new LecternLook(state.scribe$getColor(), state.scribe$isFoil(), state.scribe$getTrim(), state.scribe$getStrap(), state.scribe$getClasp(),
-				state.scribe$getTitle(), state.scribe$getSpine());
-		}
-
-		public void applyTo(ColoredRenderState state) {
-			state.scribe$setColor(this.color);
-			state.scribe$setFoil(this.foil);
-			state.scribe$setTrim(this.trim);
-			state.scribe$setStrap(this.strap);
-			state.scribe$setClasp(this.clasp);
-			state.scribe$setTitle(this.title);
-			state.scribe$setSpine(this.spine);
-		}
 	}
 
 	public static void submitLecternLayers(SubmitNodeCollector collector, BookModel model, BookModel.State state, PoseStack poseStack, int lightCoords,
@@ -344,28 +320,4 @@ public final class ColorsClient {
 	}
 
 	public static final int HIDDEN_SHELF_BOOK = 0x00FFFFFF;
-
-	private static BlockTintSource shelfTint(int slot) {
-		return new BlockTintSource() {
-			@Override
-			public int color(BlockState state) {
-				return ScribeConfig.get().shelfColorsShown() ? UNDYED_SHELF_BOOK : HIDDEN_SHELF_BOOK;
-			}
-
-			@Override
-			public int colorInWorld(BlockState state, BlockAndTintGetter level, BlockPos pos) {
-				if (!ScribeConfig.get().shelfColorsShown()) {
-					return HIDDEN_SHELF_BOOK;
-				}
-				BlockEntity shelf = level.getBlockEntity(pos);
-				int dyed = shelf instanceof ColoredBlockEntity colored ? colored.scribe$getColor(slot) : 0;
-				return shelfBookColor(dyed, shelf instanceof BookPreviews previews ? previews.scribe$preview(slot) : ItemStack.EMPTY);
-			}
-
-			@Override
-			public int colorAsTerrainParticle(BlockState state, BlockAndTintGetter level, BlockPos pos) {
-				return -1;
-			}
-		};
-	}
 }

@@ -3,7 +3,7 @@ package scribe.client.mixin;
 import scribe.EnchantedBooks;
 import scribe.colors.BookColors;
 import scribe.client.BookNet;
-import scribe.client.colors.ColoredBookScreen;
+import scribe.client.colors.CoverTints;
 import scribe.client.text.EnchantedPages;
 import scribe.client.text.SharedPages;
 import net.minecraft.client.Minecraft;
@@ -32,7 +32,7 @@ public abstract class LecternScreenMixin {
 	private void scribe$bookChanged(CallbackInfo ci) {
 		LecternScreen self = (LecternScreen) (Object) this;
 		ItemStack book = self.getMenu().getBook();
-		((ColoredBookScreen) self).scribe$setColor(BookColors.of(book));
+		CoverTints.remember(self, BookColors.of(book));
 		if (EnchantedBooks.is(book)) {
 			EnchantedPages.Book pages = EnchantedPages.of(book, Minecraft.getInstance().font);
 			self.setBookAccess(new BookViewScreen.BookAccess(pages.pages()));

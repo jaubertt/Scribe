@@ -23,7 +23,7 @@ import net.minecraft.world.item.crafting.display.RecipeDisplay;
 import net.minecraft.world.item.crafting.display.ShapelessCraftingRecipeDisplay;
 import net.minecraft.world.item.crafting.display.SlotDisplay;
 import net.minecraft.world.level.Level;
-import scribe.colors.recipe.DyedRecipe;
+import scribe.colors.DyeCarry;
 
 public class InkRecipe extends NormalCraftingRecipe {
 	public static final MapCodec<InkRecipe> MAP_CODEC = RecordCodecBuilder.mapCodec(i -> i.group(
@@ -86,7 +86,7 @@ public class InkRecipe extends NormalCraftingRecipe {
 
 	@Override
 	public ItemStack assemble(CraftingInput input) {
-		return DyedRecipe.keepColor(this.result.create(), input);
+		return DyeCarry.crafted(this.result.create(), input);
 	}
 
 	@Override

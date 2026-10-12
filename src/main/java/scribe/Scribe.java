@@ -1,7 +1,7 @@
 package scribe;
 
 import scribe.binding.Bookbinding;
-import scribe.colors.Colors;
+import scribe.colors.ColorSetup;
 import scribe.config.ScribeConfig;
 import scribe.network.Payloads;
 import scribe.placed.PlacedBooks;
@@ -22,7 +22,7 @@ public final class Scribe implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		ScribeConfig.get();
-		Colors.init();
+		ColorSetup.init();
 		Bookbinding.init();
 		Payloads.register();
 		ServerBooks.init();

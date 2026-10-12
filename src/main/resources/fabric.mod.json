@@ -11,7 +11,7 @@
 		"sources": "https://github.com/jaubertt/Scribe",
 		"issues": "https://github.com/jaubertt/Scribe/issues"
 	},
-	"license": "ARR",
+	"license": ["MIT", "All Rights Reserved (art)"],
 	"icon": "assets/scribe/icon.png",
 	"environment": "*",
 	"entrypoints": {

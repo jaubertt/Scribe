@@ -54,52 +54,6 @@ public final class EnchantColors {
 		}
 	}
 
-	static final Map<String, DyeColor> DEFAULTS = Map.ofEntries(
-		Map.entry("minecraft:protection", DyeColor.ORANGE),
-		Map.entry("minecraft:fire_protection", DyeColor.ORANGE),
-		Map.entry("minecraft:feather_falling", DyeColor.WHITE),
-		Map.entry("minecraft:blast_protection", DyeColor.ORANGE),
-		Map.entry("minecraft:projectile_protection", DyeColor.ORANGE),
-		Map.entry("minecraft:respiration", DyeColor.LIGHT_BLUE),
-		Map.entry("minecraft:aqua_affinity", DyeColor.BLUE),
-		Map.entry("minecraft:thorns", DyeColor.GREEN),
-		Map.entry("minecraft:depth_strider", DyeColor.LIGHT_GRAY),
-		Map.entry("minecraft:frost_walker", DyeColor.LIGHT_GRAY),
-		Map.entry("minecraft:binding_curse", DyeColor.BLACK),
-		Map.entry("minecraft:soul_speed", DyeColor.CYAN),
-		Map.entry("minecraft:swift_sneak", DyeColor.CYAN),
-		Map.entry("minecraft:sharpness", DyeColor.GRAY),
-		Map.entry("minecraft:smite", DyeColor.GRAY),
-		Map.entry("minecraft:bane_of_arthropods", DyeColor.GRAY),
-		Map.entry("minecraft:knockback", DyeColor.PINK),
-		Map.entry("minecraft:fire_aspect", DyeColor.RED),
-		Map.entry("minecraft:looting", DyeColor.YELLOW),
-		Map.entry("minecraft:sweeping_edge", DyeColor.WHITE),
-		Map.entry("minecraft:efficiency", DyeColor.CYAN),
-		Map.entry("minecraft:silk_touch", DyeColor.YELLOW),
-		Map.entry("minecraft:unbreaking", DyeColor.BLUE),
-		Map.entry("minecraft:fortune", DyeColor.YELLOW),
-		Map.entry("minecraft:power", DyeColor.PURPLE),
-		Map.entry("minecraft:punch", DyeColor.PINK),
-		Map.entry("minecraft:flame", DyeColor.RED),
-		Map.entry("minecraft:infinity", DyeColor.LIME),
-		Map.entry("minecraft:luck_of_the_sea", DyeColor.GREEN),
-		Map.entry("minecraft:lure", DyeColor.PINK),
-		Map.entry("minecraft:loyalty", DyeColor.MAGENTA),
-		Map.entry("minecraft:impaling", DyeColor.PURPLE),
-		Map.entry("minecraft:riptide", DyeColor.MAGENTA),
-		Map.entry("minecraft:channeling", DyeColor.LIGHT_BLUE),
-		Map.entry("minecraft:multishot", DyeColor.BROWN),
-		Map.entry("minecraft:quick_charge", DyeColor.CYAN),
-		Map.entry("minecraft:piercing", DyeColor.BROWN),
-		Map.entry("minecraft:density", DyeColor.GRAY),
-		Map.entry("minecraft:breach", DyeColor.GRAY),
-		Map.entry("minecraft:wind_burst", DyeColor.WHITE),
-		Map.entry("minecraft:lunge", DyeColor.MAGENTA),
-		Map.entry("minecraft:mending", DyeColor.LIME),
-		Map.entry("minecraft:vanishing_curse", DyeColor.BLACK)
-	);
-
 	private static final class Stored {
 		String style = "classic";
 		String mode = "off";
@@ -174,10 +128,7 @@ public final class EnchantColors {
 	}
 
 	public Optional<DyeColor> enchantment(String id) {
-		if (this.enchantments.containsKey(id)) {
-			return Optional.ofNullable(this.enchantments.get(id));
-		}
-		return Optional.ofNullable(DEFAULTS.get(id));
+		return Optional.ofNullable(this.enchantments.get(id));
 	}
 
 	public void setEnchantment(String id, @Nullable DyeColor color) {

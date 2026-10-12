@@ -6,6 +6,8 @@ import org.jspecify.annotations.Nullable;
 public interface LecternAccess {
 	void scribe$bookEdited();
 
+	int scribe$coverDye();
+
 	boolean scribe$isClosed();
 
 	void scribe$setClosed(boolean closed);

@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.util.Mth;
 
 public final class GuiBookTint {
-	public static int pending = -1;
+	public static final int NO_TINT = -1;
 	public static final int ORDER = 1;
 	public static final int FULL_BRIGHT = 15728880;
 
@@ -21,13 +21,17 @@ public final class GuiBookTint {
 	}
 
 	public static BookModel.State bookState(float open, float flip) {
+		return bookState(0.0F, open, flip);
+	}
+
+	public static BookModel.State bookState(float time, float open, float flip) {
 		float flip1 = Mth.clamp(Mth.frac(flip + 0.25F) * 1.6F - 0.3F, 0.0F, 1.0F);
 		float flip2 = Mth.clamp(Mth.frac(flip + 0.75F) * 1.6F - 0.3F, 0.0F, 1.0F);
-		return BookModel.State.forAnimation(0.0F, flip1, flip2, open);
+		return BookModel.State.forAnimation(time, flip1, flip2, open);
 	}
 
 	public static void submit(SubmitNodeCollector collector, BookModel model, float open, float flip, PoseStack poseStack, int color) {
-		if (color == -1) {
+		if (color == NO_TINT) {
 			return;
 		}
 		collector.order(ORDER).submitModel(model, bookState(open, flip), poseStack, renderType(), FULL_BRIGHT, OverlayTexture.NO_OVERLAY, color, null, 0);

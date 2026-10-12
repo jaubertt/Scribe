@@ -24,4 +24,4 @@ https://github.com/jaubertt/Scribe/issues
 
 ## License
 
-All rights reserved (see LICENSE).
+The code is MIT licensed. The art (the pictures and the block and item models) is All Rights Reserved. LICENSE has the details, with the parts that come from Minecraft and the public domain textures of Enchanted Book Redesign.

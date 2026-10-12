@@ -4,10 +4,9 @@ import scribe.access.BookPreviews;
 import scribe.access.LecternAccess;
 import scribe.client.LecternMotions;
 import scribe.client.Looks;
-import scribe.colors.ColoredBlockEntity;
 import scribe.config.ScribeConfig;
 import scribe.client.colors.ColorsClient;
-import scribe.client.colors.ColoredRenderState;
+import scribe.client.colors.BookLooks;
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.llamalad7.mixinextras.sugar.Local;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -48,21 +47,22 @@ public abstract class LecternRendererMixin {
 	@Inject(method = "extractRenderState(Lnet/minecraft/world/level/block/entity/LecternBlockEntity;Lnet/minecraft/client/renderer/blockentity/state/LecternRenderState;FLnet/minecraft/world/phys/Vec3;Lnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;)V", at = @At("RETURN"))
 	private void scribe$extract(LecternBlockEntity lectern, LecternRenderState state, float partialTicks, Vec3 camera,
 		ModelFeatureRenderer.CrumblingOverlay breakProgress, CallbackInfo ci) {
-		ColoredRenderState colored = (ColoredRenderState) state;
-		int color = ((ColoredBlockEntity) lectern).scribe$getColor(0);
+		FabricRenderState data = (FabricRenderState) state;
+		LecternAccess access = (LecternAccess) lectern;
 		ItemStack preview = ((BookPreviews) lectern).scribe$preview(0);
-		ColorsClient.LecternLook.of(preview, color).applyTo(colored);
-		boolean closed = ((LecternAccess) lectern).scribe$isClosed();
+		data.setData(BookLooks.LECTERN, ColorsClient.LecternLook.of(preview, access.scribe$coverDye()));
+		boolean closed = access.scribe$isClosed();
 		boolean shownClosed = Looks.closedBooks();
-		colored.scribe$setClosed(closed && shownClosed);
+		data.setData(BookLooks.SHUT_ON_LECTERN, closed && shownClosed);
 		LecternMotions.Moment moment = LecternMotions.moment(lectern, closed, partialTicks);
-		((FabricRenderState) state).setData(LecternMotions.MOMENT, shownClosed || moment.open() >= 1.0F ? moment : LecternMotions.OPEN);
+		data.setData(LecternMotions.MOMENT, shownClosed || moment.open() >= 1.0F ? moment : LecternMotions.OPEN);
 	}
 
 	@Unique
 	private static LecternMotions.Moment scribe$moment(LecternRenderState state) {
-		LecternMotions.Moment moment = ((FabricRenderState) state).getData(LecternMotions.MOMENT);
-		return moment != null ? moment : ((ColoredRenderState) state).scribe$isClosed() ? LecternMotions.CLOSED : LecternMotions.OPEN;
+		FabricRenderState data = (FabricRenderState) state;
+		LecternMotions.Moment moment = data.getData(LecternMotions.MOMENT);
+		return moment != null ? moment : Boolean.TRUE.equals(data.getData(BookLooks.SHUT_ON_LECTERN)) ? LecternMotions.CLOSED : LecternMotions.OPEN;
 	}
 
 	@Unique
@@ -86,15 +86,15 @@ public abstract class LecternRendererMixin {
 	@Inject(method = "submit(Lnet/minecraft/client/renderer/blockentity/state/LecternRenderState;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;Lnet/minecraft/client/renderer/state/level/CameraRenderState;)V",
 		at = @At(value = "INVOKE", target = "Lcom/mojang/blaze3d/vertex/PoseStack;popPose()V"))
 	private void scribe$submit(LecternRenderState state, PoseStack poseStack, SubmitNodeCollector collector, CameraRenderState camera, CallbackInfo ci) {
-		if (!ScribeConfig.get().lecternLookShown()) {
+		ColorsClient.LecternLook look = ((FabricRenderState) state).getData(BookLooks.LECTERN);
+		if (!ScribeConfig.get().lecternLookShown() || look == null) {
 			return;
 		}
-		ColoredRenderState colored = (ColoredRenderState) state;
 		LecternMotions.Moment moment = scribe$moment(state);
 		BookModel.State book = scribe$bookState(state, BOOK_STATE);
 		boolean shut = moment.shut();
 		boolean front = moment.open() < 1.0F;
-		ColorsClient.submitLecternLayers(collector, this.bookModel, book, poseStack, state.lightCoords, ColorsClient.LecternLook.from(colored), shut, front,
+		ColorsClient.submitLecternLayers(collector, this.bookModel, book, poseStack, state.lightCoords, look, shut, front,
 			this.sprites);
 	}
 }

@@ -9,16 +9,17 @@ import scribe.access.LecternAccess;
 import scribe.access.LecternMenuAccess;
 import scribe.access.LecternWatch;
 import scribe.colors.BookColors;
-import scribe.colors.ColoredBlockEntity;
 import scribe.config.ScribeConfig;
 import scribe.server.BookPreview;
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import com.llamalad7.mixinextras.sugar.Local;
-import java.util.Optional;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.NbtOps;
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
+import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -40,9 +41,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(LecternBlockEntity.class)
-public abstract class LecternBlockEntityMixin extends BlockEntity implements ColoredBlockEntity, BookPreviews, LecternAccess {
+public abstract class LecternBlockEntityMixin extends BlockEntity implements BookPreviews, LecternAccess {
 	@Unique
-	private static final String COLOR_KEY = "scribe:color";
+	private static final String COVER_DYE_KEY = "scribe:cover_dye";
 	@Unique
 	private static final String BOOK_KEY = "scribe:book";
 	@Unique
@@ -60,7 +61,7 @@ public abstract class LecternBlockEntityMixin extends BlockEntity implements Col
 	private int pageCount;
 
 	@Unique
-	private int scribe$color = BookColors.DEFAULT;
+	private int scribe$heardDye = BookColors.DEFAULT;
 	@Unique
 	private ItemStack scribe$preview = ItemStack.EMPTY;
 	@Unique
@@ -77,24 +78,22 @@ public abstract class LecternBlockEntityMixin extends BlockEntity implements Col
 	}
 
 	@Override
-	public int scribe$getColor(int index) {
-		return this.scribe$color;
+	public @Nullable Packet<ClientGamePacketListener> getUpdatePacket() {
+		Packet<ClientGamePacketListener> packet = super.getUpdatePacket();
+		return packet != null ? packet : ClientboundBlockEntityDataPacket.create(this);
 	}
 
 	@Override
-	public void scribe$setColor(int index, int color) {
-		this.scribe$color = color;
-	}
-
-	@Override
-	public void scribe$writeSyncData(HolderLookup.Provider registries, CompoundTag tag) {
-		tag.putInt(COLOR_KEY, this.scribe$color);
+	public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
+		CompoundTag tag = super.getUpdateTag(registries);
 		ClosedLecterns.share(tag, this.scribe$closed, !this.book.isEmpty());
+		tag.putInt(COVER_DYE_KEY, BookColors.of(this.book));
 		if (ScribeConfig.get().bookInfoOn() && !this.book.isEmpty()) {
 			tag.store(BOOK_KEY, ItemStack.OPTIONAL_CODEC, registries.createSerializationContext(NbtOps.INSTANCE), BookPreview.of(this.book));
 			tag.putInt(PAGE_KEY, this.page);
 			tag.putInt(PAGES_KEY, this.pageCount);
 		}
+		return tag;
 	}
 
 	@Inject(method = "saveAdditional", at = @At("RETURN"))
@@ -109,14 +108,11 @@ public abstract class LecternBlockEntityMixin extends BlockEntity implements Col
 		this.scribe$closed = ClosedLecterns.load(input);
 		this.scribe$librarian = null;
 		if (this.level != null && this.level.isClientSide()) {
-			Optional<Integer> color = input.getInt(COLOR_KEY);
-			this.scribe$color = color.orElse(BookColors.DEFAULT);
+			this.scribe$heardDye = input.getIntOr(COVER_DYE_KEY, BookColors.DEFAULT);
 			this.scribe$preview = input.read(BOOK_KEY, ItemStack.OPTIONAL_CODEC).orElse(ItemStack.EMPTY);
 			this.scribe$sharedPage = input.getIntOr(PAGE_KEY, -1);
 			this.scribe$sharedPages = input.getIntOr(PAGES_KEY, 0);
 			LecternWatch.arrived((LecternBlockEntity) (Object) this, wasClosed, this.scribe$closed, oldPage, this.scribe$sharedPage);
-		} else {
-			this.scribe$color = BookColors.of(this.book);
 		}
 	}
 
@@ -132,7 +128,6 @@ public abstract class LecternBlockEntityMixin extends BlockEntity implements Col
 
 	@Inject(method = "setBook(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/player/Player;)V", at = @At("TAIL"))
 	private void scribe$setBook(ItemStack newBook, Player player, CallbackInfo ci) {
-		this.scribe$color = BookColors.of(this.book);
 		if (!ScribeConfig.get().lecternPagesOn() || !Bookmarks.isBook(this.book) || this.pageCount <= 0) {
 			return;
 		}
@@ -144,7 +139,6 @@ public abstract class LecternBlockEntityMixin extends BlockEntity implements Col
 
 	@Inject(method = "onBookItemRemove", at = @At("HEAD"))
 	private void scribe$bookRemoved(CallbackInfo ci) {
-		this.scribe$color = BookColors.DEFAULT;
 		this.scribe$closed = false;
 		this.scribe$librarian = null;
 	}
@@ -183,9 +177,13 @@ public abstract class LecternBlockEntityMixin extends BlockEntity implements Col
 	public void scribe$bookEdited() {
 		this.pageCount = BookPreview.pageCount(this.book);
 		this.page = this.pageCount <= 0 ? 0 : Math.clamp(this.page, 0, this.pageCount - 1);
-		this.scribe$color = BookColors.of(this.book);
 		this.setChanged();
 		this.scribe$tellPlayers();
+	}
+
+	@Override
+	public int scribe$coverDye() {
+		return this.level != null && this.level.isClientSide() ? this.scribe$heardDye : BookColors.of(this.book);
 	}
 
 	@Override

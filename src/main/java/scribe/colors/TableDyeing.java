@@ -25,6 +25,7 @@ import net.minecraft.world.item.component.DyedItemColor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.entity.EnchantingTableBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.storage.loot.LootTable;
@@ -53,7 +54,7 @@ public final class TableDyeing {
 			return InteractionResult.PASS;
 		}
 		BlockPos pos = hit.getBlockPos();
-		if (!(level.getBlockEntity(pos) instanceof DyedTable table)) {
+		if (!(level.getBlockEntity(pos) instanceof EnchantingTableBlockEntity table)) {
 			return InteractionResult.PASS;
 		}
 		ItemStack stack = player.getItemInHand(hand);
@@ -62,7 +63,7 @@ public final class TableDyeing {
 		if (dye == null && !water) {
 			return InteractionResult.PASS;
 		}
-		DyedItemColor current = table.scribe$dyedColor();
+		DyedItemColor current = TableDye.get(table);
 		DyedItemColor next = water ? null : DyedItemColor.applyDyes(current, List.of(dye));
 		if (Objects.equals(current, next)) {
 			return InteractionResult.PASS;
@@ -70,7 +71,7 @@ public final class TableDyeing {
 		if (level.isClientSide()) {
 			return InteractionResult.SUCCESS;
 		}
-		table.scribe$setDyedColor(next);
+		TableDye.set(table, next);
 		BlockState state = level.getBlockState(pos);
 		level.sendBlockUpdated(pos, state, state, Block.UPDATE_CLIENTS);
 		level.gameEvent(player, GameEvent.BLOCK_CHANGE, pos);
