@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_dye",
+  "dye": "#minecraft:dyes",
+  "group": "dyed_books",
+  "result": {
+    "id": "minecraft:enchanted_book"
+  },
+  "target": "minecraft:enchanted_book"
+}

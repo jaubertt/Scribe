@@ -1,0 +1,141 @@
+{
+ "sentry": {
+  "window": 0,
+  "slats_2slot": 1,
+  "lozenge": 2,
+  "lattice_band3": 0,
+  "lattice": 3,
+  "cloud_e": 1,
+  "scroll2": 4
+ },
+ "vex": {
+  "lattice": 0,
+  "scroll2": 1
+ },
+ "wild": {
+  "window": 0,
+  "slats_2slot": 0,
+  "lozenge": 1,
+  "lattice_band3": 1,
+  "lattice": 1,
+  "cloud_e": 0,
+  "scroll2": 2
+ },
+ "dune": {
+  "window": 0,
+  "slats_2slot": 1,
+  "lozenge": 2,
+  "lattice_band3": 0,
+  "lattice": 3,
+  "cloud_e": 1,
+  "scroll2": 4
+ },
+ "wayfinder": {
+  "window": 0,
+  "slats_2slot": 0,
+  "lozenge": 0,
+  "lattice_band3": 0,
+  "lattice": 1,
+  "cloud_e": 0,
+  "scroll2": 1
+ },
+ "raiser": {
+  "window": 0,
+  "slats_2slot": 1,
+  "lozenge": 2,
+  "lattice_band3": 3,
+  "lattice": 4,
+  "cloud_e": 1,
+  "scroll2": 5
+ },
+ "shaper": {
+  "window": 0,
+  "slats_2slot": 1,
+  "lozenge": 2,
+  "lattice_band3": 0,
+  "lattice": 3,
+  "cloud_e": 1,
+  "scroll2": 4
+ },
+ "ward": {
+  "window": 0,
+  "slats_2slot": 1,
+  "lozenge": 2,
+  "lattice_band3": 3,
+  "lattice": 4,
+  "cloud_e": 5,
+  "scroll2": 6
+ },
+ "silence": {
+  "window": 0,
+  "slats_2slot": 1,
+  "lozenge": 2,
+  "lattice_band3": 3,
+  "lattice": 4,
+  "cloud_e": 5,
+  "scroll2": 6
+ },
+ "tide": {
+  "window": 0,
+  "slats_2slot": 1,
+  "lozenge": 2,
+  "lattice_band3": 0,
+  "lattice": 3,
+  "cloud_e": 1,
+  "scroll2": 4
+ },
+ "snout": {
+  "window": 0,
+  "slats_2slot": 1,
+  "lozenge": 2,
+  "lattice_band3": 0,
+  "lattice": 3,
+  "cloud_e": 1,
+  "scroll2": 4
+ },
+ "rib": {
+  "window": 0,
+  "slats_2slot": 0,
+  "lozenge": 0,
+  "lattice_band3": 0,
+  "lattice": 1,
+  "cloud_e": 0,
+  "scroll2": 1
+ },
+ "eye": {
+  "window": 0,
+  "slats_2slot": 1,
+  "lozenge": 2,
+  "lattice_band3": 0,
+  "lattice": 3,
+  "cloud_e": 1,
+  "scroll2": 4
+ },
+ "spire": {
+  "window": 0,
+  "slats_2slot": 0,
+  "lozenge": 1,
+  "lattice_band3": 0,
+  "lattice": 2,
+  "cloud_e": 0,
+  "scroll2": 2
+ },
+ "flow": {
+  "window": 0,
+  "slats_2slot": 1,
+  "lozenge": 2,
+  "lattice_band3": 0,
+  "lattice": 3,
+  "cloud_e": 1,
+  "scroll2": 4
+ },
+ "bolt": {
+  "window": 0,
+  "slats_2slot": 1,
+  "lozenge": 2,
+  "lattice_band3": 3,
+  "lattice": 4,
+  "cloud_e": 5,
+  "scroll2": 6
+ }
+}

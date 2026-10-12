@@ -1,0 +1,52 @@
+{
+	"required": true,
+	"package": "scribe.client.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"client": [
+		"AbstractSignEditScreenAccessor",
+		"AvatarRendererMixin",
+		"BakedQuadMaterialInfoMixin",
+		"BlockEntityRenderStateColorMixin",
+		"BookEditScreenMixin",
+		"BookModelMixin",
+		"BookSignScreenMixin",
+		"BookViewScreenAccessor",
+		"BookViewScreenMixin",
+		"ClientPacketListenerColorMixin",
+		"ClientPacketListenerMixin",
+		"ConditionalItemModelPropertiesAccessor",
+		"DyeTintMixin",
+		"EnchantTableRendererMixin",
+		"EnchantmentScreenMixin",
+		"FirstPersonHandsAndItemsAccessor",
+		"FirstPersonHandsAndItemsRendererMixin",
+		"FontAccessor",
+		"GuiBookModelRenderStateMixin",
+		"GuiBookModelRendererMixin",
+		"GuiGraphicsExtractorMixin",
+		"GuiMixin",
+		"HudStateAccessor",
+		"HumanoidModelMixin",
+		"InkDisplayOrientationMixin",
+		"InkDisplayRendererMixin",
+		"ItemDisplayRendererMixin",
+		"ItemModelResolverMixin",
+		"ItemTintSourcesAccessor",
+		"KeyboardHandlerMixin",
+		"LecternRendererMixin",
+		"LecternScreenMixin",
+		"LevelEventHandlerMixin",
+		"LevelRendererOutlineMixin",
+		"LocalPlayerMixin",
+		"PlayerModelMixin",
+		"RangeSelectItemModelPropertiesAccessor",
+		"RenderTypeInvoker",
+		"VillagerRendererMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}

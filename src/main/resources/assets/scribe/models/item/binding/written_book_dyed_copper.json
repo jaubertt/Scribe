@@ -1,0 +1,8 @@
+{
+    "parent": "minecraft:item/generated",
+    "textures": {
+        "layer0": "scribe:item/written_book_cover",
+        "layer1": "scribe:item/written_book_pages",
+        "layer2": "scribe:trims/items/written_book_trim_copper"
+    }
+}

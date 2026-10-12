@@ -1,0 +1,6 @@
+{
+  "parent": "scribe:block/ink_pot_open",
+  "textures": {
+    "bottle": "scribe:block/lime_ink_bottle_open"
+  }
+}

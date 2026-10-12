@@ -1,0 +1,9 @@
+{
+    "parent": "minecraft:item/generated",
+    "textures": {
+        "layer0": "scribe:item/ribbon_book/book",
+        "layer1": "scribe:item/ribbon_book/book_pages",
+        "layer2": "scribe:item/ribbon_book/ribbon",
+        "layer3": "scribe:item/ribbon_book/level_2"
+    }
+}

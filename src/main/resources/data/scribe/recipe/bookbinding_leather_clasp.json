@@ -1,0 +1,6 @@
+{
+  "type": "scribe:bookbinding",
+  "part": "clasp",
+  "template": "minecraft:leather",
+  "base": "#scribe:bindable_books"
+}

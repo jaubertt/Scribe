@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "scribe_ink",
+  "ingredients": [
+    {
+      "fabric:type": "fabric:components",
+      "base": "minecraft:potion",
+      "components": {
+        "minecraft:potion_contents": {
+          "potion": "minecraft:water"
+        }
+      }
+    },
+    "minecraft:orange_dye"
+  ],
+  "result": {
+    "id": "minecraft:orange_dye",
+    "components": {
+      "minecraft:custom_data": {
+        "scribe:ink_pot": true
+      },
+      "minecraft:max_stack_size": 16,
+      "minecraft:item_name": {
+        "translate": "scribe.ink.orange",
+        "fallback": "Orange Ink"
+      }
+    }
+  }
+}

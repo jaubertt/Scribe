@@ -1,0 +1,58 @@
+{
+  "textures": {
+    "particle": "#shelf",
+    "shelf": "lolmcbv:block/jungle_chiseled_bookshelf_occupied",
+    "books": "scribe:block/chiseled_bookshelf_books"
+  },
+  "elements": [
+    {
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        5,
+        8,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            11,
+            8,
+            16,
+            16
+          ],
+          "texture": "#shelf",
+          "cullface": "north"
+        }
+      }
+    },
+    {
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        5,
+        8,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            11,
+            8,
+            16,
+            16
+          ],
+          "texture": "#books",
+          "cullface": "north",
+          "tintindex": 5
+        }
+      }
+    }
+  ]
+}

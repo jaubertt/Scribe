@@ -1,0 +1,176 @@
+{
+  "textures": {
+    "bottle": "scribe:block/black_ink_bottle",
+    "particle": "#bottle"
+  },
+  "elements": [
+    {
+      "from": [
+        6,
+        0,
+        6
+      ],
+      "to": [
+        10,
+        3,
+        10
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            4,
+            8,
+            8,
+            11
+          ],
+          "texture": "#bottle"
+        },
+        "east": {
+          "uv": [
+            8,
+            0,
+            12,
+            3
+          ],
+          "texture": "#bottle"
+        },
+        "south": {
+          "uv": [
+            8,
+            3,
+            12,
+            6
+          ],
+          "texture": "#bottle"
+        },
+        "west": {
+          "uv": [
+            0,
+            8,
+            4,
+            11
+          ],
+          "texture": "#bottle"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#bottle"
+        },
+        "down": {
+          "uv": [
+            4,
+            4,
+            0,
+            8
+          ],
+          "texture": "#bottle"
+        }
+      }
+    },
+    {
+      "from": [
+        7,
+        3,
+        7
+      ],
+      "to": [
+        9,
+        5,
+        9
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            8,
+            6,
+            10,
+            8
+          ],
+          "texture": "#bottle"
+        },
+        "east": {
+          "uv": [
+            8,
+            8,
+            10,
+            10
+          ],
+          "texture": "#bottle"
+        },
+        "south": {
+          "uv": [
+            10,
+            6,
+            12,
+            8
+          ],
+          "texture": "#bottle"
+        },
+        "west": {
+          "uv": [
+            10,
+            8,
+            12,
+            10
+          ],
+          "texture": "#bottle"
+        },
+        "up": {
+          "uv": [
+            12,
+            2,
+            14,
+            4
+          ],
+          "texture": "#bottle"
+        },
+        "down": {
+          "uv": [
+            12,
+            0,
+            14,
+            2
+          ],
+          "texture": "#bottle"
+        }
+      }
+    },
+    {
+      "from": [
+        6,
+        4,
+        6
+      ],
+      "to": [
+        10,
+        4,
+        10
+      ],
+      "faces": {
+        "up": {
+          "uv": [
+            4,
+            0,
+            8,
+            4
+          ],
+          "texture": "#bottle"
+        },
+        "down": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#bottle"
+        }
+      }
+    }
+  ]
+}

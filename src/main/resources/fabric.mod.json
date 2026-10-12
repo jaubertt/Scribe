@@ -1,0 +1,59 @@
+{
+	"schemaVersion": 1,
+	"id": "scribe",
+	"version": "${version}",
+	"name": "Scribe",
+	"description": "Writing utilities and book customization.",
+	"authors": [
+		"Jaubert"
+	],
+	"contact": {
+		"sources": "https://github.com/jaubertt/Scribe",
+		"issues": "https://github.com/jaubertt/Scribe/issues"
+	},
+	"license": "ARR",
+	"icon": "assets/scribe/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"scribe.Scribe"
+		],
+		"client": [
+			"scribe.client.ScribeClient"
+		],
+		"modmenu": [
+			"scribe.client.compat.ModMenuCompat"
+		]
+	},
+	"mixins": [
+		"scribe.mixins.json",
+		{
+			"config": "scribe.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~26.3",
+		"java": ">=25",
+		"fabric-api": "*"
+	},
+	"breaks": {
+		"scholar": "*",
+		"scribble": "*",
+		"stendhal": "*",
+		"colorful_books": "*",
+		"book_scroll": "*",
+		"book_and_quick_save": "*",
+		"bookmark": "*",
+		"book-tweaks": "*",
+		"book-formatting": "*",
+		"enhancedbookwriting": "*",
+		"fixbookgui": "*",
+		"betterbooks": "*",
+		"bookcopy": "*"
+	},
+	"suggests": {
+		"modmenu": "*"
+	}
+}

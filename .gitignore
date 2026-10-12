@@ -1,0 +1,72 @@
+# gradle
+
+.gradle/
+build/
+out/
+classes/
+
+# eclipse
+
+*.launch
+
+# idea
+
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# vscode
+
+.settings/
+.vscode/
+bin/
+.classpath
+.project
+
+# macos
+
+*.DS_Store
+
+# fabric
+
+run/
+run2/
+
+# java
+
+hs_err_*.log
+replay_*.log
+*.hprof
+*.jfr
+
+# claude
+
+Claude outputs*/
+.claude/
+CLAUDE.md
+
+# datagen cache
+
+src/main/generated/.cache/
+
+# iCloud Drive copies ("name 2.json", folders like "recipe 2") and files waiting to be deleted
+
+* [0-9]
+* [0-9].*
+* [0-9][0-9]
+* [0-9][0-9].*
+_to_delete/
+
+# reference art from Minecraft and other mods: for drawing only, never pushed
+
+art/reference/
+
+# kept out of the public repo: working notes, drafts, art sources and design files
+
+/FEATURES.md
+/TESTING.md
+/DESCRIPTION*.md
+/art/
+/design/
+/libs/*-sources.jar

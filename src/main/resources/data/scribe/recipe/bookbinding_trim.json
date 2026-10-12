@@ -1,0 +1,6 @@
+{
+  "type": "scribe:bookbinding",
+  "part": "trim",
+  "base": "#scribe:bindable_books",
+  "addition": "#minecraft:trim_materials"
+}

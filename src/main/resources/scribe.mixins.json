@@ -1,0 +1,40 @@
+{
+  "required": true,
+  "package": "scribe.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "mixins": [
+    "AbstractContainerMenuMixin",
+    "AnvilMenuMakerMixin",
+    "BlockEntityMixin",
+    "BookCloningRecipeMixin",
+    "CauldronInteractionsMixin",
+    "ChiseledBookShelfBlockEntityMixin",
+    "ChiseledBookShelfBlockMixin",
+    "CrafterBlockMixin",
+    "CraftingMenuMixin",
+    "DisplayAccessor",
+    "DyeItemMixin",
+    "EnchantingTableBlockEntityMixin",
+    "EnchantmentMenuMakerMixin",
+    "EnchantmentMenuMixin",
+    "GrindstoneInputSlotMixin",
+    "GrindstoneMakerMixin",
+    "GrindstoneMenuMixin",
+    "InteractionAccessor",
+    "LecternBlockEntityMixin",
+    "LecternBlockMixin",
+    "LecternMenuMixin",
+    "MerchantContainerMixin",
+    "ServerGamePacketListenerImplMixin",
+    "ShapelessRecipeMixin",
+    "WorkAtPoiMixin",
+    "AbstractVillagerAccessor",
+    "WorkAtPoiReadingMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}

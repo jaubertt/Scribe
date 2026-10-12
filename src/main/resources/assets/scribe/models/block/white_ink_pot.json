@@ -1,0 +1,6 @@
+{
+  "parent": "scribe:block/ink_pot",
+  "textures": {
+    "bottle": "scribe:block/white_ink_bottle"
+  }
+}

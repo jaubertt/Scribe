@@ -1,0 +1,8 @@
+{
+    "parent": "minecraft:item/generated",
+    "textures": {
+        "layer0": "scribe:item/writable_book_cover",
+        "layer1": "scribe:item/writable_book_pages",
+        "layer2": "scribe:item/writable_book_strap"
+    }
+}

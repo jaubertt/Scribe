@@ -1,0 +1,53 @@
+{
+  "sources": [
+    {
+      "type": "minecraft:single",
+      "resource": "scribe:entity/enchanting_table_book"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "scribe:entity/enchanting_table_book_corners"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "scribe:entity/enchanting_table_book_corner_pages"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "scribe:entity/enchanting_table_book_strap"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "scribe:entity/enchanting_table_book_strap_open"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "scribe:entity/enchanting_table_book_title"
+    },
+    {
+      "type": "minecraft:paletted_permutations",
+      "palette_key": "minecraft:trim_base",
+      "permutations": {
+        "quartz": "minecraft:trim/quartz",
+        "iron": "minecraft:trim/iron",
+        "netherite": "minecraft:trim/netherite",
+        "redstone": "minecraft:trim/redstone",
+        "copper": "minecraft:trim/copper",
+        "gold": "minecraft:trim/gold",
+        "emerald": "minecraft:trim/emerald",
+        "diamond": "minecraft:trim/diamond",
+        "lapis": "minecraft:trim/lapis",
+        "amethyst": "minecraft:trim/amethyst",
+        "resin": "minecraft:trim/resin"
+      },
+      "textures": [
+        "scribe:entity/enchanting_table_book_trim",
+        "scribe:entity/enchanting_table_book_clasp_level_2",
+        "scribe:entity/enchanting_table_book_clasp_level_3",
+        "scribe:entity/enchanting_table_book_clasp_level_4",
+        "scribe:entity/enchanting_table_book_clasp_level_5",
+        "scribe:entity/enchanting_table_book_spine"
+      ]
+    }
+  ]
+}

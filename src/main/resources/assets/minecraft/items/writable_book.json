@@ -1,0 +1,3530 @@
+{
+  "model": {
+    "type": "minecraft:condition",
+    "property": "scribe:book_icons",
+    "on_true": {
+      "type": "minecraft:condition",
+      "property": "minecraft:custom_model_data",
+      "index": 0,
+      "on_true": {
+        "type": "minecraft:select",
+        "property": "minecraft:custom_model_data",
+        "index": 7,
+        "cases": [
+          {
+            "when": "minecraft:quartz",
+            "model": {
+              "type": "minecraft:composite",
+              "models": [
+                {
+                  "type": "minecraft:select",
+                  "property": "minecraft:custom_model_data",
+                  "index": 0,
+                  "cases": [
+                    {
+                      "when": "minecraft:quartz",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_quartz",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:iron",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_iron",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:netherite",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_netherite",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:redstone",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_redstone",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:copper",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_copper",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:gold",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_gold",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:emerald",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_emerald",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:diamond",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_diamond",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:lapis",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_lapis",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:amethyst",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_amethyst",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:resin",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_resin",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "fallback": {
+                    "type": "minecraft:model",
+                    "model": "scribe:item/binding/writable_book_strap",
+                    "tints": [
+                      {
+                        "type": "minecraft:dye",
+                        "default": -6265536
+                      },
+                      {
+                        "type": "minecraft:constant",
+                        "value": -1
+                      },
+                      {
+                        "type": "minecraft:custom_model_data",
+                        "index": 0,
+                        "default": -6265536
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "minecraft:model",
+                  "model": "scribe:item/binding/writable_book_clasp_original_quartz"
+                }
+              ]
+            }
+          },
+          {
+            "when": "minecraft:iron",
+            "model": {
+              "type": "minecraft:composite",
+              "models": [
+                {
+                  "type": "minecraft:select",
+                  "property": "minecraft:custom_model_data",
+                  "index": 0,
+                  "cases": [
+                    {
+                      "when": "minecraft:quartz",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_quartz",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:iron",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_iron",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:netherite",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_netherite",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:redstone",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_redstone",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:copper",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_copper",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:gold",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_gold",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:emerald",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_emerald",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:diamond",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_diamond",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:lapis",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_lapis",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:amethyst",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_amethyst",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:resin",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_resin",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "fallback": {
+                    "type": "minecraft:model",
+                    "model": "scribe:item/binding/writable_book_strap",
+                    "tints": [
+                      {
+                        "type": "minecraft:dye",
+                        "default": -6265536
+                      },
+                      {
+                        "type": "minecraft:constant",
+                        "value": -1
+                      },
+                      {
+                        "type": "minecraft:custom_model_data",
+                        "index": 0,
+                        "default": -6265536
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "minecraft:model",
+                  "model": "scribe:item/binding/writable_book_clasp_original_iron"
+                }
+              ]
+            }
+          },
+          {
+            "when": "minecraft:netherite",
+            "model": {
+              "type": "minecraft:composite",
+              "models": [
+                {
+                  "type": "minecraft:select",
+                  "property": "minecraft:custom_model_data",
+                  "index": 0,
+                  "cases": [
+                    {
+                      "when": "minecraft:quartz",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_quartz",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:iron",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_iron",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:netherite",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_netherite",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:redstone",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_redstone",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:copper",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_copper",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:gold",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_gold",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:emerald",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_emerald",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:diamond",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_diamond",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:lapis",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_lapis",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:amethyst",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_amethyst",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:resin",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_resin",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "fallback": {
+                    "type": "minecraft:model",
+                    "model": "scribe:item/binding/writable_book_strap",
+                    "tints": [
+                      {
+                        "type": "minecraft:dye",
+                        "default": -6265536
+                      },
+                      {
+                        "type": "minecraft:constant",
+                        "value": -1
+                      },
+                      {
+                        "type": "minecraft:custom_model_data",
+                        "index": 0,
+                        "default": -6265536
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "minecraft:model",
+                  "model": "scribe:item/binding/writable_book_clasp_original_netherite"
+                }
+              ]
+            }
+          },
+          {
+            "when": "minecraft:redstone",
+            "model": {
+              "type": "minecraft:composite",
+              "models": [
+                {
+                  "type": "minecraft:select",
+                  "property": "minecraft:custom_model_data",
+                  "index": 0,
+                  "cases": [
+                    {
+                      "when": "minecraft:quartz",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_quartz",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:iron",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_iron",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:netherite",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_netherite",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:redstone",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_redstone",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:copper",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_copper",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:gold",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_gold",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:emerald",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_emerald",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:diamond",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_diamond",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:lapis",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_lapis",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:amethyst",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_amethyst",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:resin",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_resin",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "fallback": {
+                    "type": "minecraft:model",
+                    "model": "scribe:item/binding/writable_book_strap",
+                    "tints": [
+                      {
+                        "type": "minecraft:dye",
+                        "default": -6265536
+                      },
+                      {
+                        "type": "minecraft:constant",
+                        "value": -1
+                      },
+                      {
+                        "type": "minecraft:custom_model_data",
+                        "index": 0,
+                        "default": -6265536
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "minecraft:model",
+                  "model": "scribe:item/binding/writable_book_clasp_original_redstone"
+                }
+              ]
+            }
+          },
+          {
+            "when": "minecraft:copper",
+            "model": {
+              "type": "minecraft:composite",
+              "models": [
+                {
+                  "type": "minecraft:select",
+                  "property": "minecraft:custom_model_data",
+                  "index": 0,
+                  "cases": [
+                    {
+                      "when": "minecraft:quartz",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_quartz",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:iron",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_iron",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:netherite",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_netherite",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:redstone",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_redstone",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:copper",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_copper",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:gold",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_gold",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:emerald",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_emerald",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:diamond",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_diamond",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:lapis",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_lapis",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:amethyst",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_amethyst",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:resin",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_resin",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "fallback": {
+                    "type": "minecraft:model",
+                    "model": "scribe:item/binding/writable_book_strap",
+                    "tints": [
+                      {
+                        "type": "minecraft:dye",
+                        "default": -6265536
+                      },
+                      {
+                        "type": "minecraft:constant",
+                        "value": -1
+                      },
+                      {
+                        "type": "minecraft:custom_model_data",
+                        "index": 0,
+                        "default": -6265536
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "minecraft:model",
+                  "model": "scribe:item/binding/writable_book_clasp_original_copper"
+                }
+              ]
+            }
+          },
+          {
+            "when": "minecraft:gold",
+            "model": {
+              "type": "minecraft:composite",
+              "models": [
+                {
+                  "type": "minecraft:select",
+                  "property": "minecraft:custom_model_data",
+                  "index": 0,
+                  "cases": [
+                    {
+                      "when": "minecraft:quartz",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_quartz",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:iron",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_iron",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:netherite",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_netherite",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:redstone",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_redstone",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:copper",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_copper",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:gold",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_gold",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:emerald",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_emerald",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:diamond",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_diamond",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:lapis",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_lapis",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:amethyst",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_amethyst",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:resin",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_resin",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "fallback": {
+                    "type": "minecraft:model",
+                    "model": "scribe:item/binding/writable_book_strap",
+                    "tints": [
+                      {
+                        "type": "minecraft:dye",
+                        "default": -6265536
+                      },
+                      {
+                        "type": "minecraft:constant",
+                        "value": -1
+                      },
+                      {
+                        "type": "minecraft:custom_model_data",
+                        "index": 0,
+                        "default": -6265536
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "minecraft:model",
+                  "model": "scribe:item/binding/writable_book_clasp_original_gold"
+                }
+              ]
+            }
+          },
+          {
+            "when": "minecraft:emerald",
+            "model": {
+              "type": "minecraft:composite",
+              "models": [
+                {
+                  "type": "minecraft:select",
+                  "property": "minecraft:custom_model_data",
+                  "index": 0,
+                  "cases": [
+                    {
+                      "when": "minecraft:quartz",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_quartz",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:iron",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_iron",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:netherite",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_netherite",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:redstone",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_redstone",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:copper",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_copper",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:gold",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_gold",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:emerald",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_emerald",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:diamond",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_diamond",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:lapis",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_lapis",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:amethyst",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_amethyst",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:resin",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_resin",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "fallback": {
+                    "type": "minecraft:model",
+                    "model": "scribe:item/binding/writable_book_strap",
+                    "tints": [
+                      {
+                        "type": "minecraft:dye",
+                        "default": -6265536
+                      },
+                      {
+                        "type": "minecraft:constant",
+                        "value": -1
+                      },
+                      {
+                        "type": "minecraft:custom_model_data",
+                        "index": 0,
+                        "default": -6265536
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "minecraft:model",
+                  "model": "scribe:item/binding/writable_book_clasp_original_emerald"
+                }
+              ]
+            }
+          },
+          {
+            "when": "minecraft:diamond",
+            "model": {
+              "type": "minecraft:composite",
+              "models": [
+                {
+                  "type": "minecraft:select",
+                  "property": "minecraft:custom_model_data",
+                  "index": 0,
+                  "cases": [
+                    {
+                      "when": "minecraft:quartz",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_quartz",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:iron",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_iron",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:netherite",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_netherite",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:redstone",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_redstone",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:copper",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_copper",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:gold",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_gold",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:emerald",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_emerald",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:diamond",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_diamond",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:lapis",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_lapis",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:amethyst",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_amethyst",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:resin",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_resin",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "fallback": {
+                    "type": "minecraft:model",
+                    "model": "scribe:item/binding/writable_book_strap",
+                    "tints": [
+                      {
+                        "type": "minecraft:dye",
+                        "default": -6265536
+                      },
+                      {
+                        "type": "minecraft:constant",
+                        "value": -1
+                      },
+                      {
+                        "type": "minecraft:custom_model_data",
+                        "index": 0,
+                        "default": -6265536
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "minecraft:model",
+                  "model": "scribe:item/binding/writable_book_clasp_original_diamond"
+                }
+              ]
+            }
+          },
+          {
+            "when": "minecraft:lapis",
+            "model": {
+              "type": "minecraft:composite",
+              "models": [
+                {
+                  "type": "minecraft:select",
+                  "property": "minecraft:custom_model_data",
+                  "index": 0,
+                  "cases": [
+                    {
+                      "when": "minecraft:quartz",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_quartz",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:iron",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_iron",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:netherite",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_netherite",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:redstone",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_redstone",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:copper",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_copper",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:gold",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_gold",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:emerald",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_emerald",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:diamond",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_diamond",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:lapis",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_lapis",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:amethyst",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_amethyst",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:resin",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_resin",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "fallback": {
+                    "type": "minecraft:model",
+                    "model": "scribe:item/binding/writable_book_strap",
+                    "tints": [
+                      {
+                        "type": "minecraft:dye",
+                        "default": -6265536
+                      },
+                      {
+                        "type": "minecraft:constant",
+                        "value": -1
+                      },
+                      {
+                        "type": "minecraft:custom_model_data",
+                        "index": 0,
+                        "default": -6265536
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "minecraft:model",
+                  "model": "scribe:item/binding/writable_book_clasp_original_lapis"
+                }
+              ]
+            }
+          },
+          {
+            "when": "minecraft:amethyst",
+            "model": {
+              "type": "minecraft:composite",
+              "models": [
+                {
+                  "type": "minecraft:select",
+                  "property": "minecraft:custom_model_data",
+                  "index": 0,
+                  "cases": [
+                    {
+                      "when": "minecraft:quartz",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_quartz",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:iron",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_iron",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:netherite",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_netherite",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:redstone",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_redstone",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:copper",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_copper",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:gold",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_gold",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:emerald",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_emerald",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:diamond",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_diamond",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:lapis",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_lapis",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:amethyst",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_amethyst",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:resin",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_resin",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "fallback": {
+                    "type": "minecraft:model",
+                    "model": "scribe:item/binding/writable_book_strap",
+                    "tints": [
+                      {
+                        "type": "minecraft:dye",
+                        "default": -6265536
+                      },
+                      {
+                        "type": "minecraft:constant",
+                        "value": -1
+                      },
+                      {
+                        "type": "minecraft:custom_model_data",
+                        "index": 0,
+                        "default": -6265536
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "minecraft:model",
+                  "model": "scribe:item/binding/writable_book_clasp_original_amethyst"
+                }
+              ]
+            }
+          },
+          {
+            "when": "minecraft:resin",
+            "model": {
+              "type": "minecraft:composite",
+              "models": [
+                {
+                  "type": "minecraft:select",
+                  "property": "minecraft:custom_model_data",
+                  "index": 0,
+                  "cases": [
+                    {
+                      "when": "minecraft:quartz",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_quartz",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:iron",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_iron",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:netherite",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_netherite",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:redstone",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_redstone",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:copper",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_copper",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:gold",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_gold",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:emerald",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_emerald",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:diamond",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_diamond",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:lapis",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_lapis",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:amethyst",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_amethyst",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "when": "minecraft:resin",
+                      "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/binding/writable_book_strap_trim_resin",
+                        "tints": [
+                          {
+                            "type": "minecraft:dye",
+                            "default": -6265536
+                          },
+                          {
+                            "type": "minecraft:constant",
+                            "value": -1
+                          },
+                          {
+                            "type": "minecraft:custom_model_data",
+                            "index": 0,
+                            "default": -6265536
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "fallback": {
+                    "type": "minecraft:model",
+                    "model": "scribe:item/binding/writable_book_strap",
+                    "tints": [
+                      {
+                        "type": "minecraft:dye",
+                        "default": -6265536
+                      },
+                      {
+                        "type": "minecraft:constant",
+                        "value": -1
+                      },
+                      {
+                        "type": "minecraft:custom_model_data",
+                        "index": 0,
+                        "default": -6265536
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "minecraft:model",
+                  "model": "scribe:item/binding/writable_book_clasp_original_resin"
+                }
+              ]
+            }
+          }
+        ],
+        "fallback": {
+          "type": "minecraft:select",
+          "property": "minecraft:custom_model_data",
+          "index": 0,
+          "cases": [
+            {
+              "when": "minecraft:quartz",
+              "model": {
+                "type": "minecraft:model",
+                "model": "scribe:item/binding/writable_book_strap_trim_quartz",
+                "tints": [
+                  {
+                    "type": "minecraft:dye",
+                    "default": -6265536
+                  },
+                  {
+                    "type": "minecraft:constant",
+                    "value": -1
+                  },
+                  {
+                    "type": "minecraft:custom_model_data",
+                    "index": 0,
+                    "default": -6265536
+                  }
+                ]
+              }
+            },
+            {
+              "when": "minecraft:iron",
+              "model": {
+                "type": "minecraft:model",
+                "model": "scribe:item/binding/writable_book_strap_trim_iron",
+                "tints": [
+                  {
+                    "type": "minecraft:dye",
+                    "default": -6265536
+                  },
+                  {
+                    "type": "minecraft:constant",
+                    "value": -1
+                  },
+                  {
+                    "type": "minecraft:custom_model_data",
+                    "index": 0,
+                    "default": -6265536
+                  }
+                ]
+              }
+            },
+            {
+              "when": "minecraft:netherite",
+              "model": {
+                "type": "minecraft:model",
+                "model": "scribe:item/binding/writable_book_strap_trim_netherite",
+                "tints": [
+                  {
+                    "type": "minecraft:dye",
+                    "default": -6265536
+                  },
+                  {
+                    "type": "minecraft:constant",
+                    "value": -1
+                  },
+                  {
+                    "type": "minecraft:custom_model_data",
+                    "index": 0,
+                    "default": -6265536
+                  }
+                ]
+              }
+            },
+            {
+              "when": "minecraft:redstone",
+              "model": {
+                "type": "minecraft:model",
+                "model": "scribe:item/binding/writable_book_strap_trim_redstone",
+                "tints": [
+                  {
+                    "type": "minecraft:dye",
+                    "default": -6265536
+                  },
+                  {
+                    "type": "minecraft:constant",
+                    "value": -1
+                  },
+                  {
+                    "type": "minecraft:custom_model_data",
+                    "index": 0,
+                    "default": -6265536
+                  }
+                ]
+              }
+            },
+            {
+              "when": "minecraft:copper",
+              "model": {
+                "type": "minecraft:model",
+                "model": "scribe:item/binding/writable_book_strap_trim_copper",
+                "tints": [
+                  {
+                    "type": "minecraft:dye",
+                    "default": -6265536
+                  },
+                  {
+                    "type": "minecraft:constant",
+                    "value": -1
+                  },
+                  {
+                    "type": "minecraft:custom_model_data",
+                    "index": 0,
+                    "default": -6265536
+                  }
+                ]
+              }
+            },
+            {
+              "when": "minecraft:gold",
+              "model": {
+                "type": "minecraft:model",
+                "model": "scribe:item/binding/writable_book_strap_trim_gold",
+                "tints": [
+                  {
+                    "type": "minecraft:dye",
+                    "default": -6265536
+                  },
+                  {
+                    "type": "minecraft:constant",
+                    "value": -1
+                  },
+                  {
+                    "type": "minecraft:custom_model_data",
+                    "index": 0,
+                    "default": -6265536
+                  }
+                ]
+              }
+            },
+            {
+              "when": "minecraft:emerald",
+              "model": {
+                "type": "minecraft:model",
+                "model": "scribe:item/binding/writable_book_strap_trim_emerald",
+                "tints": [
+                  {
+                    "type": "minecraft:dye",
+                    "default": -6265536
+                  },
+                  {
+                    "type": "minecraft:constant",
+                    "value": -1
+                  },
+                  {
+                    "type": "minecraft:custom_model_data",
+                    "index": 0,
+                    "default": -6265536
+                  }
+                ]
+              }
+            },
+            {
+              "when": "minecraft:diamond",
+              "model": {
+                "type": "minecraft:model",
+                "model": "scribe:item/binding/writable_book_strap_trim_diamond",
+                "tints": [
+                  {
+                    "type": "minecraft:dye",
+                    "default": -6265536
+                  },
+                  {
+                    "type": "minecraft:constant",
+                    "value": -1
+                  },
+                  {
+                    "type": "minecraft:custom_model_data",
+                    "index": 0,
+                    "default": -6265536
+                  }
+                ]
+              }
+            },
+            {
+              "when": "minecraft:lapis",
+              "model": {
+                "type": "minecraft:model",
+                "model": "scribe:item/binding/writable_book_strap_trim_lapis",
+                "tints": [
+                  {
+                    "type": "minecraft:dye",
+                    "default": -6265536
+                  },
+                  {
+                    "type": "minecraft:constant",
+                    "value": -1
+                  },
+                  {
+                    "type": "minecraft:custom_model_data",
+                    "index": 0,
+                    "default": -6265536
+                  }
+                ]
+              }
+            },
+            {
+              "when": "minecraft:amethyst",
+              "model": {
+                "type": "minecraft:model",
+                "model": "scribe:item/binding/writable_book_strap_trim_amethyst",
+                "tints": [
+                  {
+                    "type": "minecraft:dye",
+                    "default": -6265536
+                  },
+                  {
+                    "type": "minecraft:constant",
+                    "value": -1
+                  },
+                  {
+                    "type": "minecraft:custom_model_data",
+                    "index": 0,
+                    "default": -6265536
+                  }
+                ]
+              }
+            },
+            {
+              "when": "minecraft:resin",
+              "model": {
+                "type": "minecraft:model",
+                "model": "scribe:item/binding/writable_book_strap_trim_resin",
+                "tints": [
+                  {
+                    "type": "minecraft:dye",
+                    "default": -6265536
+                  },
+                  {
+                    "type": "minecraft:constant",
+                    "value": -1
+                  },
+                  {
+                    "type": "minecraft:custom_model_data",
+                    "index": 0,
+                    "default": -6265536
+                  }
+                ]
+              }
+            }
+          ],
+          "fallback": {
+            "type": "minecraft:model",
+            "model": "scribe:item/binding/writable_book_strap",
+            "tints": [
+              {
+                "type": "minecraft:dye",
+                "default": -6265536
+              },
+              {
+                "type": "minecraft:constant",
+                "value": -1
+              },
+              {
+                "type": "minecraft:custom_model_data",
+                "index": 0,
+                "default": -6265536
+              }
+            ]
+          }
+        }
+      },
+      "on_false": {
+        "type": "minecraft:select",
+        "property": "minecraft:custom_model_data",
+        "index": 0,
+        "cases": [
+          {
+            "when": "minecraft:quartz",
+            "model": {
+              "type": "minecraft:model",
+              "model": "scribe:item/binding/writable_book_quartz",
+              "tints": [
+                {
+                  "type": "minecraft:dye",
+                  "default": -6265536
+                }
+              ]
+            }
+          },
+          {
+            "when": "minecraft:iron",
+            "model": {
+              "type": "minecraft:model",
+              "model": "scribe:item/binding/writable_book_iron",
+              "tints": [
+                {
+                  "type": "minecraft:dye",
+                  "default": -6265536
+                }
+              ]
+            }
+          },
+          {
+            "when": "minecraft:netherite",
+            "model": {
+              "type": "minecraft:model",
+              "model": "scribe:item/binding/writable_book_netherite",
+              "tints": [
+                {
+                  "type": "minecraft:dye",
+                  "default": -6265536
+                }
+              ]
+            }
+          },
+          {
+            "when": "minecraft:redstone",
+            "model": {
+              "type": "minecraft:model",
+              "model": "scribe:item/binding/writable_book_redstone",
+              "tints": [
+                {
+                  "type": "minecraft:dye",
+                  "default": -6265536
+                }
+              ]
+            }
+          },
+          {
+            "when": "minecraft:copper",
+            "model": {
+              "type": "minecraft:model",
+              "model": "scribe:item/binding/writable_book_copper",
+              "tints": [
+                {
+                  "type": "minecraft:dye",
+                  "default": -6265536
+                }
+              ]
+            }
+          },
+          {
+            "when": "minecraft:gold",
+            "model": {
+              "type": "minecraft:model",
+              "model": "scribe:item/binding/writable_book_gold",
+              "tints": [
+                {
+                  "type": "minecraft:dye",
+                  "default": -6265536
+                }
+              ]
+            }
+          },
+          {
+            "when": "minecraft:emerald",
+            "model": {
+              "type": "minecraft:model",
+              "model": "scribe:item/binding/writable_book_emerald",
+              "tints": [
+                {
+                  "type": "minecraft:dye",
+                  "default": -6265536
+                }
+              ]
+            }
+          },
+          {
+            "when": "minecraft:diamond",
+            "model": {
+              "type": "minecraft:model",
+              "model": "scribe:item/binding/writable_book_diamond",
+              "tints": [
+                {
+                  "type": "minecraft:dye",
+                  "default": -6265536
+                }
+              ]
+            }
+          },
+          {
+            "when": "minecraft:lapis",
+            "model": {
+              "type": "minecraft:model",
+              "model": "scribe:item/binding/writable_book_lapis",
+              "tints": [
+                {
+                  "type": "minecraft:dye",
+                  "default": -6265536
+                }
+              ]
+            }
+          },
+          {
+            "when": "minecraft:amethyst",
+            "model": {
+              "type": "minecraft:model",
+              "model": "scribe:item/binding/writable_book_amethyst",
+              "tints": [
+                {
+                  "type": "minecraft:dye",
+                  "default": -6265536
+                }
+              ]
+            }
+          },
+          {
+            "when": "minecraft:resin",
+            "model": {
+              "type": "minecraft:model",
+              "model": "scribe:item/binding/writable_book_resin",
+              "tints": [
+                {
+                  "type": "minecraft:dye",
+                  "default": -6265536
+                }
+              ]
+            }
+          }
+        ],
+        "fallback": {
+          "type": "minecraft:model",
+          "model": "scribe:item/writable_book",
+          "tints": [
+            {
+              "type": "minecraft:dye",
+              "default": -6265536
+            }
+          ]
+        }
+      }
+    },
+    "on_false": {
+      "type": "minecraft:model",
+      "model": "minecraft:item/writable_book"
+    }
+  }
+}

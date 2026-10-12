@@ -1,0 +1,7 @@
+{
+  "type": "scribe:bookbinding",
+  "part": "strap",
+  "template": "minecraft:leather",
+  "base": "#scribe:bindable_books",
+  "addition": "#minecraft:dyes"
+}

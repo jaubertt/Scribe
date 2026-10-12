@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:item/generated",
+    "textures": {
+        "layer0": "scribe:trims/items/writable_book_clasp_original_emerald"
+    }
+}

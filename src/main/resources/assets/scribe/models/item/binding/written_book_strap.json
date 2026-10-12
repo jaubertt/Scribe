@@ -1,0 +1,7 @@
+{
+    "parent": "minecraft:item/generated",
+    "textures": {
+        "layer0": "minecraft:item/written_book",
+        "layer1": "scribe:item/written_book_strap"
+    }
+}

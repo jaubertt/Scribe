@@ -1,0 +1,170 @@
+{
+    "model": {
+        "type": "minecraft:condition",
+        "property": "scribe:book_icons",
+        "on_true": {
+            "type": "minecraft:range_dispatch",
+            "property": "scribe:enchanted_book_style",
+            "entries": [
+                {
+                    "threshold": 0,
+                    "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/enchanted_book_ribbon_cursed",
+                        "tints": [
+                            {
+                                "type": "minecraft:dye",
+                                "default": -10790053
+                            },
+                            {
+                                "type": "minecraft:constant",
+                                "value": -1
+                            },
+                            {
+                                "type": "scribe:ribbon"
+                            },
+                            {
+                                "type": "minecraft:constant",
+                                "value": -1
+                            }
+                        ]
+                    }
+                },
+                {
+                    "threshold": 1,
+                    "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/enchanted_book_ribbon",
+                        "tints": [
+                            {
+                                "type": "minecraft:dye",
+                                "default": -10790053
+                            },
+                            {
+                                "type": "minecraft:constant",
+                                "value": -1
+                            },
+                            {
+                                "type": "scribe:ribbon"
+                            },
+                            {
+                                "type": "minecraft:constant",
+                                "value": -1
+                            }
+                        ]
+                    }
+                },
+                {
+                    "threshold": 2,
+                    "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/enchanted_book_ribbon_2",
+                        "tints": [
+                            {
+                                "type": "minecraft:dye",
+                                "default": -10790053
+                            },
+                            {
+                                "type": "minecraft:constant",
+                                "value": -1
+                            },
+                            {
+                                "type": "scribe:ribbon"
+                            },
+                            {
+                                "type": "minecraft:constant",
+                                "value": -1
+                            }
+                        ]
+                    }
+                },
+                {
+                    "threshold": 3,
+                    "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/enchanted_book_ribbon_3",
+                        "tints": [
+                            {
+                                "type": "minecraft:dye",
+                                "default": -10790053
+                            },
+                            {
+                                "type": "minecraft:constant",
+                                "value": -1
+                            },
+                            {
+                                "type": "scribe:ribbon"
+                            },
+                            {
+                                "type": "minecraft:constant",
+                                "value": -1
+                            }
+                        ]
+                    }
+                },
+                {
+                    "threshold": 4,
+                    "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/enchanted_book_ribbon_4",
+                        "tints": [
+                            {
+                                "type": "minecraft:dye",
+                                "default": -10790053
+                            },
+                            {
+                                "type": "minecraft:constant",
+                                "value": -1
+                            },
+                            {
+                                "type": "scribe:ribbon"
+                            },
+                            {
+                                "type": "minecraft:constant",
+                                "value": -1
+                            }
+                        ]
+                    }
+                },
+                {
+                    "threshold": 5,
+                    "model": {
+                        "type": "minecraft:model",
+                        "model": "scribe:item/enchanted_book_ribbon_5",
+                        "tints": [
+                            {
+                                "type": "minecraft:dye",
+                                "default": -10790053
+                            },
+                            {
+                                "type": "minecraft:constant",
+                                "value": -1
+                            },
+                            {
+                                "type": "scribe:ribbon"
+                            },
+                            {
+                                "type": "minecraft:constant",
+                                "value": -1
+                            }
+                        ]
+                    }
+                }
+            ],
+            "fallback": {
+                "type": "minecraft:model",
+                "model": "scribe:item/enchanted_book",
+                "tints": [
+                    {
+                        "type": "minecraft:dye",
+                        "default": -6265536
+                    }
+                ]
+            }
+        },
+        "on_false": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/enchanted_book"
+        }
+    }
+}

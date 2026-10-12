@@ -1,0 +1,12 @@
+{
+  "type": "scribe:crafting_with_ink",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:book",
+    "minecraft:feather"
+  ],
+  "ink": "#minecraft:dyes",
+  "result": {
+    "id": "minecraft:writable_book"
+  }
+}

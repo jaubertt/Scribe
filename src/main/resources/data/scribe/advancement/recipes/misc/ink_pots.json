@@ -1,0 +1,73 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_glass_bottle": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:glass_bottle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_water_bottle": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:potion",
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:water"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_glass_bottle",
+      "has_water_bottle"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "scribe:white_ink",
+      "scribe:orange_ink",
+      "scribe:magenta_ink",
+      "scribe:light_blue_ink",
+      "scribe:yellow_ink",
+      "scribe:lime_ink",
+      "scribe:pink_ink",
+      "scribe:gray_ink",
+      "scribe:light_gray_ink",
+      "scribe:cyan_ink",
+      "scribe:purple_ink",
+      "scribe:blue_ink",
+      "scribe:brown_ink",
+      "scribe:green_ink",
+      "scribe:red_ink",
+      "scribe:black_ink",
+      "scribe:dye_white_ink",
+      "scribe:dye_orange_ink",
+      "scribe:dye_magenta_ink",
+      "scribe:dye_light_blue_ink",
+      "scribe:dye_yellow_ink",
+      "scribe:dye_lime_ink",
+      "scribe:dye_pink_ink",
+      "scribe:dye_gray_ink",
+      "scribe:dye_light_gray_ink",
+      "scribe:dye_cyan_ink",
+      "scribe:dye_purple_ink",
+      "scribe:dye_blue_ink",
+      "scribe:dye_brown_ink",
+      "scribe:dye_green_ink",
+      "scribe:dye_red_ink",
+      "scribe:dye_black_ink",
+      "scribe:writable_book_from_ink"
+    ]
+  }
+}

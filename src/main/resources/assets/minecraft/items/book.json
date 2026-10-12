@@ -1,0 +1,35 @@
+{
+  "model": {
+    "type": "minecraft:condition",
+    "property": "scribe:book_icons",
+    "on_true": {
+      "type": "minecraft:condition",
+      "property": "minecraft:has_component",
+      "component": "minecraft:dyed_color",
+      "on_true": {
+        "type": "minecraft:model",
+        "model": "scribe:item/book",
+        "tints": [
+          {
+            "type": "minecraft:dye",
+            "default": -6265536
+          }
+        ]
+      },
+      "on_false": {
+        "type": "minecraft:model",
+        "model": "scribe:item/book",
+        "tints": [
+          {
+            "type": "minecraft:constant",
+            "value": -6265536
+          }
+        ]
+      }
+    },
+    "on_false": {
+      "type": "minecraft:model",
+      "model": "minecraft:item/book"
+    }
+  }
+}
