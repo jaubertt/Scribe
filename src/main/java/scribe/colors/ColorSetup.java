@@ -9,11 +9,14 @@ import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.core.Registry;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 
 public final class ColorSetup {
 	public static final String SHELF_VARIANTS_MOD = "lolmcbv";
+	public static final Identifier BOOKS_PACK = Scribe.id("books");
 
 	private ColorSetup() {
 	}
@@ -29,6 +32,8 @@ public final class ColorSetup {
 		ServerLifecycleEvents.END_DATA_PACK_RELOAD.register((server, resources, success) -> DyeOptions.reload());
 		TableDyeing.init();
 		FabricLoader loader = FabricLoader.getInstance();
+		loader.getModContainer(Scribe.MOD_ID).ifPresent(scribe ->
+			ResourceLoader.registerBuiltinPack(BOOKS_PACK, scribe, Component.literal("Scribe"), PackActivationType.DEFAULT_ENABLED));
 		if (loader.isModLoaded(SHELF_VARIANTS_MOD)) {
 			loader.getModContainer(Scribe.MOD_ID).ifPresent(scribe ->
 				ResourceLoader.registerBuiltinPack(Scribe.id("compat/" + SHELF_VARIANTS_MOD), scribe, PackActivationType.ALWAYS_ENABLED));

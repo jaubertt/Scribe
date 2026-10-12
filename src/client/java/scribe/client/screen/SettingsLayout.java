@@ -9,6 +9,7 @@ import java.util.Map;
 import java.util.function.BiConsumer;
 import java.util.function.Predicate;
 import org.jspecify.annotations.Nullable;
+import scribe.client.ScribePack;
 import scribe.client.compat.OtherMods;
 import scribe.config.ScribeConfig;
 import scribe.network.Payloads.ServerFeatures;
@@ -49,6 +50,7 @@ public final class SettingsLayout {
 	}
 
 	public static final String SCREENS = "screens";
+	public static final String PACK = "pack";
 	public static final String OFF = "!";
 	public static final String MOD = "mod:";
 	public static final String NOTE = "server_note";
@@ -56,6 +58,7 @@ public final class SettingsLayout {
 	public static final String PRESETS = "presets";
 	public static final String GUIDE = "guide";
 	public static final String WRITING_ONLY = "writing_only";
+	public static final String WRITING_UTILITIES = "writing_utilities";
 	public static final String PERSONALIZATION = "personalization";
 	public static final String WORLD_BOOKS = "world_books";
 	public static final String WRITING = "writing";
@@ -65,34 +68,39 @@ public final class SettingsLayout {
 
 	static {
 		client(WRITING_ONLY, c -> c.writingOnly, (c, v) -> c.writingOnly = v);
+		client(WRITING_UTILITIES, c -> c.writingUtilities, (c, v) -> c.writingUtilities = v);
 		client(PERSONALIZATION, c -> c.personalization, (c, v) -> c.personalization = v, OFF + WRITING_ONLY);
 		client(WORLD_BOOKS, c -> c.worldBooks, (c, v) -> c.worldBooks = v, OFF + WRITING_ONLY);
 
-		client("replace_editor", c -> c.replaceEditor, (c, v) -> c.replaceEditor = v);
-		client("replace_reader", c -> c.replaceReader, (c, v) -> c.replaceReader = v);
-		client("replace_lectern", c -> c.replaceLectern, (c, v) -> c.replaceLectern = v);
-		client("enchanted_reader", c -> c.enchantedReader, (c, v) -> c.enchantedReader = v);
-		needs("layout", SCREENS);
-		client("running_header", c -> c.runningHeader, (c, v) -> c.runningHeader = v, SCREENS);
-		client("saved_message", c -> c.savedMessage, (c, v) -> c.savedMessage = v);
-		client("paste_codes", c -> c.pasteKeepsFormatting, (c, v) -> c.pasteKeepsFormatting = v);
-		client("marks", c -> c.formatMarks, (c, v) -> c.formatMarks = v);
-		client("backups", c -> c.keepBackups, (c, v) -> c.keepBackups = v);
-		client("frames", c -> c.lineUpFrames, (c, v) -> c.lineUpFrames = v);
-		client("scroll", c -> c.scrollTurnsPages, (c, v) -> c.scrollTurnsPages = v);
+		client("replace_editor", c -> c.replaceEditor, (c, v) -> c.replaceEditor = v, WRITING_UTILITIES);
+		client("replace_reader", c -> c.replaceReader, (c, v) -> c.replaceReader = v, WRITING_UTILITIES);
+		client("replace_lectern", c -> c.replaceLectern, (c, v) -> c.replaceLectern = v, WRITING_UTILITIES);
+		client("enchanted_reader", c -> c.enchantedReader, (c, v) -> c.enchantedReader = v, WRITING_UTILITIES);
+		needs("layout", WRITING_UTILITIES, SCREENS);
+		needs("escape", WRITING_UTILITIES);
+		needs("overflow", WRITING_UTILITIES);
+		needs("section_key", WRITING_UTILITIES);
+		needs("editor_start", WRITING_UTILITIES);
+		client("running_header", c -> c.runningHeader, (c, v) -> c.runningHeader = v, WRITING_UTILITIES, SCREENS);
+		client("saved_message", c -> c.savedMessage, (c, v) -> c.savedMessage = v, WRITING_UTILITIES);
+		client("paste_codes", c -> c.pasteKeepsFormatting, (c, v) -> c.pasteKeepsFormatting = v, WRITING_UTILITIES);
+		client("marks", c -> c.formatMarks, (c, v) -> c.formatMarks = v, WRITING_UTILITIES);
+		client("backups", c -> c.keepBackups, (c, v) -> c.keepBackups = v, WRITING_UTILITIES);
+		client("frames", c -> c.lineUpFrames, (c, v) -> c.lineUpFrames = v, WRITING_UTILITIES);
+		client("scroll", c -> c.scrollTurnsPages, (c, v) -> c.scrollTurnsPages = v, WRITING_UTILITIES);
 		needs("fast_scroll", "scroll");
 		client("invert_scroll", c -> c.invertScroll, (c, v) -> c.invertScroll = v, "scroll");
-		client("remember", c -> c.rememberPages, (c, v) -> c.rememberPages = v);
-		server("server_pen_names", c -> c.allowPenNames, (c, v) -> c.allowPenNames = v, ServerFeatures.PEN_NAMES);
-		server("server_subtitles", c -> c.allowSubtitles, (c, v) -> c.allowSubtitles = v, ServerFeatures.SUBTITLES);
-		server("server_contents_links", c -> c.linkContents, (c, v) -> c.linkContents = v, ServerFeatures.CONTENTS_LINKS);
-		server("server_sign_formatting", c -> c.signFormatting, (c, v) -> c.signFormatting = v, ServerFeatures.SIGN_FORMATTING);
+		client("remember", c -> c.rememberPages, (c, v) -> c.rememberPages = v, WRITING_UTILITIES);
+		server("server_pen_names", c -> c.allowPenNames, (c, v) -> c.allowPenNames = v, ServerFeatures.PEN_NAMES, WRITING_UTILITIES);
+		server("server_subtitles", c -> c.allowSubtitles, (c, v) -> c.allowSubtitles = v, ServerFeatures.SUBTITLES, WRITING_UTILITIES);
+		server("server_contents_links", c -> c.linkContents, (c, v) -> c.linkContents = v, ServerFeatures.CONTENTS_LINKS, WRITING_UTILITIES);
+		server("server_sign_formatting", c -> c.signFormatting, (c, v) -> c.signFormatting = v, ServerFeatures.SIGN_FORMATTING, WRITING_UTILITIES);
 
 		client("covers", c -> c.showCovers, (c, v) -> c.showCovers = v, PERSONALIZATION, SCREENS);
 		client("cover_designer", c -> c.coverDesigner, (c, v) -> c.coverDesigner = v, "covers", "server_bookbinding");
 		client("tint", c -> c.tintDyedBooks, (c, v) -> c.tintDyedBooks = v, PERSONALIZATION);
 		client("engraved", c -> c.engravedCovers, (c, v) -> c.engravedCovers = v, "covers");
-		client("item_icons", c -> c.itemIcons, (c, v) -> c.itemIcons = v, PERSONALIZATION);
+		client("item_icons", c -> c.itemIcons, (c, v) -> c.itemIcons = v, PERSONALIZATION, PACK);
 		client("neutral_glint", c -> c.neutralGlint, (c, v) -> c.neutralGlint = v, "item_icons");
 		needs(ENCHANT_COLORS, PERSONALIZATION);
 		server("server_bookbinding", c -> c.allowBookbinding, (c, v) -> c.allowBookbinding = v, ServerFeatures.BOOKBINDING, PERSONALIZATION);
@@ -101,7 +109,7 @@ public final class SettingsLayout {
 		client("lectern_look", c -> c.lecternLook, (c, v) -> c.lecternLook = v, WORLD_BOOKS, PERSONALIZATION);
 		client("closed_books", c -> c.closedBooks, (c, v) -> c.closedBooks = v, WORLD_BOOKS, "server_closed_lecterns");
 		client("table_look", c -> c.tableLook, (c, v) -> c.tableLook = v, WORLD_BOOKS, PERSONALIZATION);
-		client("shelf_colors", c -> c.shelfColors, (c, v) -> c.shelfColors = v, WORLD_BOOKS, PERSONALIZATION);
+		client("shelf_colors", c -> c.shelfColors, (c, v) -> c.shelfColors = v, WORLD_BOOKS, PERSONALIZATION, PACK);
 		client("reading_pose", c -> c.showReadingPose, (c, v) -> c.showReadingPose = v, WORLD_BOOKS);
 		client("bookmarks", c -> c.sendBookmarks, (c, v) -> c.sendBookmarks = v, WORLD_BOOKS, "server_lectern_pages");
 		client("reading_librarians", c -> c.showReadingLibrarians, (c, v) -> c.showReadingLibrarians = v, WORLD_BOOKS, "server_reading_librarians");
@@ -151,6 +159,7 @@ public final class SettingsLayout {
 	public static List<Section> sections() {
 		return List.of(
 			section(WRITING,
+				wide(toggle(WRITING_UTILITIES)),
 				row(toggle("replace_editor"), toggle("replace_reader")),
 				row(toggle("replace_lectern"), choice("layout")),
 				wide(toggle("enchanted_reader")),
@@ -255,6 +264,9 @@ public final class SettingsLayout {
 	public static boolean own(String key, ScribeConfig config, Place place, int serverFlags) {
 		if (SCREENS.equals(key)) {
 			return config.anyBookScreen();
+		}
+		if (PACK.equals(key)) {
+			return ScribePack.selected();
 		}
 		if (key.startsWith(OFF)) {
 			return !own(key.substring(OFF.length()), config, place, serverFlags);

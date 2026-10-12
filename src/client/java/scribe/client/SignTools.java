@@ -12,6 +12,7 @@ import scribe.client.screen.popup.Popup;
 import scribe.client.screen.popup.SymbolPopup;
 import scribe.client.text.SignEditor;
 import scribe.client.widget.SpriteButton;
+import scribe.config.ScribeConfig;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -53,7 +54,7 @@ public final class SignTools {
 
 	public static void init() {
 		ScreenEvents.AFTER_INIT.register((client, screen, width, height) -> {
-			if (screen instanceof AbstractSignEditScreen sign) {
+			if (screen instanceof AbstractSignEditScreen sign && ScribeConfig.get().writingUtilitiesOn()) {
 				install(sign, width);
 			}
 		});

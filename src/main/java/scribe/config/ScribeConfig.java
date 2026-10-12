@@ -24,6 +24,7 @@ public final class ScribeConfig {
 	private static final List<Runnable> RELOADED = new CopyOnWriteArrayList<>();
 
 	public boolean writingOnly = false;
+	public boolean writingUtilities = true;
 	public boolean personalization = true;
 	public boolean worldBooks = true;
 	private @Nullable Boolean worldLooks;
@@ -122,6 +123,10 @@ public final class ScribeConfig {
 		return instance;
 	}
 
+	public boolean writingUtilitiesOn() {
+		return this.writingUtilities;
+	}
+
 	public boolean personalizationOn() {
 		return this.personalization && !this.writingOnly;
 	}
@@ -130,8 +135,80 @@ public final class ScribeConfig {
 		return this.worldBooks && !this.writingOnly;
 	}
 
+	public boolean editorShown() {
+		return this.writingUtilitiesOn() && this.replaceEditor;
+	}
+
+	public boolean readerShown() {
+		return this.writingUtilitiesOn() && this.replaceReader;
+	}
+
+	public boolean lecternScreenShown() {
+		return this.writingUtilitiesOn() && this.replaceLectern;
+	}
+
+	public boolean enchantedReaderShown() {
+		return this.writingUtilitiesOn() && this.enchantedReader;
+	}
+
 	public boolean anyBookScreen() {
-		return this.replaceEditor || this.replaceReader || this.replaceLectern || this.enchantedReader;
+		return this.editorShown() || this.readerShown() || this.lecternScreenShown() || this.enchantedReaderShown();
+	}
+
+	public boolean runningHeaderShown() {
+		return this.writingUtilitiesOn() && this.runningHeader;
+	}
+
+	public boolean savedMessageShown() {
+		return this.writingUtilitiesOn() && this.savedMessage;
+	}
+
+	public boolean pasteFormattingOn() {
+		return this.writingUtilitiesOn() && this.pasteKeepsFormatting;
+	}
+
+	public boolean formatMarksShown() {
+		return this.writingUtilitiesOn() && this.formatMarks;
+	}
+
+	public boolean backupsOn() {
+		return this.writingUtilitiesOn() && this.keepBackups;
+	}
+
+	public boolean framesOn() {
+		return this.writingUtilitiesOn() && this.lineUpFrames;
+	}
+
+	public boolean wheelTurnsPages() {
+		return this.writingUtilitiesOn() && this.scrollTurnsPages;
+	}
+
+	public boolean wheelInverted() {
+		return this.wheelTurnsPages() && this.invertScroll;
+	}
+
+	public boolean remembersPages() {
+		return this.writingUtilitiesOn() && this.rememberPages;
+	}
+
+	public SectionSignKey sectionSignKeyShown() {
+		return this.writingUtilitiesOn() ? this.sectionSignKey : SectionSignKey.OFF;
+	}
+
+	public boolean penNamesOn() {
+		return this.writingUtilitiesOn() && this.allowPenNames;
+	}
+
+	public boolean subtitlesOn() {
+		return this.writingUtilitiesOn() && this.allowSubtitles;
+	}
+
+	public boolean contentsLinksOn() {
+		return this.writingUtilitiesOn() && this.linkContents;
+	}
+
+	public boolean signFormattingOn() {
+		return this.writingUtilitiesOn() && this.signFormatting;
 	}
 
 	public boolean coversShown() {

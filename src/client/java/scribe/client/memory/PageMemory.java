@@ -94,7 +94,7 @@ public final class PageMemory {
 	}
 
 	public int get(String key) {
-		if (key == null || !ScribeConfig.get().rememberPages) {
+		if (key == null || !ScribeConfig.get().remembersPages()) {
 			return -1;
 		}
 		Integer page = this.pages.get(key);
@@ -110,11 +110,11 @@ public final class PageMemory {
 	}
 
 	public boolean knows(String key) {
-		return key != null && ScribeConfig.get().rememberPages && this.pages.containsKey(key);
+		return key != null && ScribeConfig.get().remembersPages() && this.pages.containsKey(key);
 	}
 
 	public boolean atCover(String key) {
-		if (key == null || !ScribeConfig.get().rememberPages) {
+		if (key == null || !ScribeConfig.get().remembersPages()) {
 			return false;
 		}
 		Integer page = this.pages.get(key);
@@ -122,7 +122,7 @@ public final class PageMemory {
 	}
 
 	private void store(String key, int page) {
-		if (key == null || !ScribeConfig.get().rememberPages) {
+		if (key == null || !ScribeConfig.get().remembersPages()) {
 			return;
 		}
 		Integer old = this.pages.put(key, page);

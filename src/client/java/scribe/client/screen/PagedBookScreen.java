@@ -269,7 +269,7 @@ public abstract class PagedBookScreen extends BookScreen implements IndexView.Ho
 			return;
 		}
 		List<String> texts = this.pageTexts();
-		boolean headers = ScribeConfig.get().runningHeader;
+		boolean headers = ScribeConfig.get().runningHeaderShown();
 		for (int slot = 0; slot < this.geo.slots(); slot++) {
 			int page = this.basePage() + slot;
 			if (page >= this.pageCount()) {
@@ -549,11 +549,11 @@ public abstract class PagedBookScreen extends BookScreen implements IndexView.Ho
 			return true;
 		}
 		ScribeConfig config = ScribeConfig.get();
-		if (!config.scrollTurnsPages) {
+		if (!config.wheelTurnsPages()) {
 			return super.mouseScrolled(x, y, scrollX, scrollY);
 		}
 		double amount = -(scrollY + scrollX);
-		if (config.invertScroll) {
+		if (config.wheelInverted()) {
 			amount = -amount;
 		}
 		double speed = Keys.fastModifierHeld() ? config.fastScrollPages : Keys.slowModifierHeld() ? 0.25 : 1.0;

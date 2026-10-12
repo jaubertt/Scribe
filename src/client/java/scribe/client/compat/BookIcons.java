@@ -5,6 +5,7 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import org.jspecify.annotations.Nullable;
+import scribe.client.ScribePack;
 import scribe.config.ScribeConfig;
 
 public final class BookIcons {
@@ -12,7 +13,7 @@ public final class BookIcons {
 	}
 
 	public static @Nullable Identifier model(ItemStack stack, @Nullable Identifier named) {
-		return model(stack, named, ScribeConfig.get().iconsShown());
+		return model(stack, named, ScribeConfig.get().iconsShown() && ScribePack.selected());
 	}
 
 	public static @Nullable Identifier model(ItemStack stack, @Nullable Identifier named, boolean iconsShown) {

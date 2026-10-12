@@ -212,6 +212,9 @@ public class SettingsScreen extends OptionsSubScreen {
 		if (SettingsLayout.SCREENS.equals(blocker)) {
 			return Component.translatable("scribe.settings.needs_screens").withStyle(ChatFormatting.GRAY);
 		}
+		if (SettingsLayout.PACK.equals(blocker)) {
+			return Component.translatable("scribe.settings.needs_pack").withStyle(ChatFormatting.GRAY);
+		}
 		if (blocker.startsWith(SettingsLayout.MOD)) {
 			return Component.translatable("scribe.settings.other_mod", OtherMods.name(blocker.substring(SettingsLayout.MOD.length()))).withStyle(ChatFormatting.GRAY);
 		}

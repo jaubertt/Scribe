@@ -16,7 +16,7 @@ public final class SignCodes {
 	}
 
 	public static List<FilteredText> keepCodes(List<String> sent, List<FilteredText> filtered) {
-		if (!ScribeConfig.get().signFormatting || sent.size() != filtered.size()) {
+		if (!ScribeConfig.get().signFormattingOn() || sent.size() != filtered.size()) {
 			return filtered;
 		}
 		List<FilteredText> out = new ArrayList<>(filtered.size());

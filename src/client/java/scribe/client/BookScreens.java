@@ -30,7 +30,7 @@ public final class BookScreens {
 	}
 
 	public static boolean openEditor(LocalPlayer player, ItemStack stack, InteractionHand hand) {
-		if (!ScribeConfig.get().replaceEditor || Keys.shiftHeldNow()) {
+		if (!ScribeConfig.get().editorShown() || Keys.shiftHeldNow()) {
 			return false;
 		}
 		WritableBookContent content = stack.get(DataComponents.WRITABLE_BOOK_CONTENT);
@@ -47,7 +47,7 @@ public final class BookScreens {
 	}
 
 	public static boolean openReader(InteractionHand hand) {
-		if (!ScribeConfig.get().replaceReader || Keys.shiftHeldNow()) {
+		if (!ScribeConfig.get().readerShown() || Keys.shiftHeldNow()) {
 			return false;
 		}
 		Minecraft minecraft = Minecraft.getInstance();
@@ -75,7 +75,7 @@ public final class BookScreens {
 		}
 		ItemStack stack = player.getItemInHand(hand);
 		Minecraft minecraft = Minecraft.getInstance();
-		if (!opensEnchantedReader(stack, ScribeConfig.get().enchantedReader, Keys.shiftHeldNow() || player.isShiftKeyDown())
+		if (!opensEnchantedReader(stack, ScribeConfig.get().enchantedReaderShown(), Keys.shiftHeldNow() || player.isShiftKeyDown())
 			|| minecraft.gui.screen() != null) {
 			return InteractionResult.PASS;
 		}
@@ -93,7 +93,7 @@ public final class BookScreens {
 	}
 
 	public static Screen replace(Screen screen) {
-		if (screen != null && screen.getClass() == LecternScreen.class && ScribeConfig.get().replaceLectern
+		if (screen != null && screen.getClass() == LecternScreen.class && ScribeConfig.get().lecternScreenShown()
 			&& !vanillaLecternScreen(Keys.shiftHeldNow(), BookNet.closedLecterns())) {
 			try {
 				LecternMenu menu = ((LecternScreen) screen).getMenu();

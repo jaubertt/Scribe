@@ -38,7 +38,7 @@ public final class GuideBook {
 		List.of("ink", "ink.1", "ink.2"),
 		List.of("binding", "binding.1", "binding.2"),
 		List.of("enchanted", "enchanted.1"),
-		List.of("commands", "commands.files", "commands.cover", "commands.pose", "commands.guide", "commands.author", "commands.book"));
+		List.of("commands", "commands.files", "commands.cover", "commands.pose", "commands.guide", "commands.settings", "commands.author", "commands.book"));
 
 	private GuideBook() {
 	}

@@ -1,6 +1,7 @@
 package scribe.client.colors;
 
 import scribe.Scribe;
+import scribe.client.ScribePack;
 import scribe.client.mixin.RenderTypeInvoker;
 import scribe.config.ScribeConfig;
 import com.mojang.blaze3d.platform.NativeImage;
@@ -112,7 +113,7 @@ public final class WrittenBookGlint {
 		@Override
 		public TextureContents loadContents(ResourceManager resources) throws IOException {
 			TextureContents contents = TextureContents.load(resources, this.resourceId());
-			if (ScribeConfig.get().neutralGlintShown()) {
+			if (ScribeConfig.get().neutralGlintShown() && ScribePack.in(resources)) {
 				NativeImage image = contents.image();
 				for (int y = 0; y < image.getHeight(); y++) {
 					for (int x = 0; x < image.getWidth(); x++) {

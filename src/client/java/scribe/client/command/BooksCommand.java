@@ -63,6 +63,10 @@ public final class BooksCommand {
 				c.getSource().getClient().schedule(() -> scribe.client.GuideBook.open(null));
 				return 1;
 			}))
+			.then(ClientCommands.literal("settings").executes(c -> {
+				c.getSource().getClient().schedule(() -> c.getSource().getClient().gui.setScreen(new scribe.client.screen.SettingsScreen(null)));
+				return 1;
+			}))
 			.then(CoverCommand.node())
 			.then(PoseCommand.node()));
 	}

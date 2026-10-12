@@ -34,9 +34,9 @@ import org.jspecify.annotations.Nullable;
 
 public final class LibrarianReading {
 	public static final int CHECK_INTERVAL = 20;
-	public static final int START_ONE_IN = 40;
+	public static final int START_ONE_IN = 72;
 	public static final int MIN_TICKS = 300;
-	public static final int MAX_TICKS = 900;
+	public static final int MAX_TICKS = 400;
 	public static final int REST_TICKS = 300;
 
 	public enum Stop {

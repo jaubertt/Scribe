@@ -163,7 +163,7 @@ public final class BookNet {
 
 	public static boolean signFormatting() {
 		if (Minecraft.getInstance().hasSingleplayerServer()) {
-			return ScribeConfig.get().signFormatting;
+			return ScribeConfig.get().signFormattingOn();
 		}
 		return has(Payloads.ServerFeatures.SIGN_FORMATTING);
 	}

@@ -286,7 +286,7 @@ public final class SignEditor {
 	}
 
 	private static boolean isSectionKey(KeyEvent event) {
-		return switch (ScribeConfig.get().sectionSignKey) {
+		return switch (ScribeConfig.get().sectionSignKeyShown()) {
 			case LEFT_ALT -> Keys.isLeftAlt(event);
 			case RIGHT_ALT -> Keys.isRightAlt(event);
 			case OFF -> false;
@@ -310,7 +310,7 @@ public final class SignEditor {
 	}
 
 	private void paste() {
-		String text = clean(this.clipboard.get(), this.formattingAvailable() && ScribeConfig.get().pasteKeepsFormatting);
+		String text = clean(this.clipboard.get(), this.formattingAvailable() && ScribeConfig.get().pasteFormattingOn());
 		Sel s = this.sel();
 		if (text.isEmpty() && s.start() == s.end()) {
 			return;

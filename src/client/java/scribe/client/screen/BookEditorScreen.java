@@ -211,7 +211,7 @@ public class BookEditorScreen extends PagedBookScreen {
 		ScribeConfig config = ScribeConfig.get();
 		for (int slot = 0; slot < this.geo.slots(); slot++) {
 			PageEditor editor = new PageEditor(this.font, this.geo.textX(slot), this.geo.textY());
-			editor.setShowMarks(config.formatMarks);
+			editor.setShowMarks(config.formatMarksShown());
 			editor.setValueListener(value -> this.onEditorChanged(editor, value));
 			editor.field().setOverflowHandler(edit -> this.placeText(editor.pageIndex(), edit.text(), edit.selectionStart(), edit.selectionEnd()));
 			editor.setFocusListener(this::onEditorFocused);
@@ -831,7 +831,7 @@ public class BookEditorScreen extends PagedBookScreen {
 			this.backUp();
 		}
 		if (this.minecraft.player != null) {
-			boolean backedUp = dirty && ScribeConfig.get().keepBackups;
+			boolean backedUp = dirty && ScribeConfig.get().backupsOn();
 			this.minecraft.player.sendOverlayMessage(Component.translatable(backedUp ? "scribe.notice.lectern_pen_backup" : "scribe.notice.lectern_pen", writer));
 		}
 		this.rememberPage();
@@ -919,7 +919,7 @@ public class BookEditorScreen extends PagedBookScreen {
 	}
 
 	private FormatCodes.Edit lineUpFrames(FormatCodes.Edit edit, int caret) {
-		if (!ScribeConfig.get().lineUpFrames || this.fitter == null) {
+		if (!ScribeConfig.get().framesOn() || this.fitter == null) {
 			return edit;
 		}
 		FrameBorders.Result lined = FrameBorders.lineUp(this.fitter, edit.text(), caret);
@@ -1552,7 +1552,7 @@ public class BookEditorScreen extends PagedBookScreen {
 	}
 
 	private boolean isSectionKey(KeyEvent event) {
-		return switch (ScribeConfig.get().sectionSignKey) {
+		return switch (ScribeConfig.get().sectionSignKeyShown()) {
 			case LEFT_ALT -> Keys.isLeftAlt(event);
 			case RIGHT_ALT -> Keys.isRightAlt(event);
 			case OFF -> false;
@@ -1619,7 +1619,7 @@ public class BookEditorScreen extends PagedBookScreen {
 	}
 
 	private void paste(PageEditor editor) {
-		String cleaned = fromClipboard(this.minecraft.keyboardHandler.getClipboard(), ScribeConfig.get().pasteKeepsFormatting);
+		String cleaned = fromClipboard(this.minecraft.keyboardHandler.getClipboard(), ScribeConfig.get().pasteFormattingOn());
 		if (!cleaned.isEmpty() || editor.field().hasSelection()) {
 			this.insertRaw(editor, cleaned);
 		}
@@ -1671,7 +1671,7 @@ public class BookEditorScreen extends PagedBookScreen {
 			this.save(false);
 		}
 		this.finish();
-		if (changed && ScribeConfig.get().savedMessage && this.minecraft.player != null) {
+		if (changed && ScribeConfig.get().savedMessageShown() && this.minecraft.player != null) {
 			this.minecraft.player.sendOverlayMessage(Component.translatable("scribe.notice.saved").withStyle(ChatFormatting.GREEN));
 		}
 	}
@@ -1847,7 +1847,7 @@ public class BookEditorScreen extends PagedBookScreen {
 		if (this.minecraft.player == null) {
 			return;
 		}
-		boolean backedUp = dirty && ScribeConfig.get().keepBackups;
+		boolean backedUp = dirty && ScribeConfig.get().backupsOn();
 		this.minecraft.player.sendOverlayMessage(Component.translatable(backedUp ? "scribe.notice.lectern_changed_backup" : "scribe.notice.lectern_changed"));
 	}
 

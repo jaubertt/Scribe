@@ -2,6 +2,7 @@ package scribe.client.colors;
 
 import scribe.Scribe;
 import scribe.access.BookPreviews;
+import scribe.client.ScribePack;
 import scribe.client.mixin.RenderTypeInvoker;
 import scribe.config.ScribeConfig;
 import com.mojang.blaze3d.vertex.DefaultVertexFormat;
@@ -86,7 +87,7 @@ public final class ShelfGlintRenderer implements BlockEntityRenderer<BlockEntity
 	}
 
 	private static int slots(BlockEntity shelf) {
-		return shelf instanceof BookPreviews books && ScribeConfig.get().shelfColorsShown() ? ShelfGlint.slots(books, shelf.getBlockState()) : 0;
+		return shelf instanceof BookPreviews books && ScribeConfig.get().shelfColorsShown() && ScribePack.selected() ? ShelfGlint.slots(books, shelf.getBlockState()) : 0;
 	}
 
 	@Override

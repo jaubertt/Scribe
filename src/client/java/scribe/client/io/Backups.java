@@ -22,7 +22,7 @@ public final class Backups {
 	}
 
 	public static void save(String bookKey, BookFile book) {
-		if (!ScribeConfig.get().keepBackups) {
+		if (!ScribeConfig.get().backupsOn()) {
 			return;
 		}
 		boolean empty = book.pages().stream().allMatch(String::isBlank);

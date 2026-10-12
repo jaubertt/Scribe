@@ -36,5 +36,6 @@ public final class ScribeClient implements ClientModInitializer {
 		LibrarianBooks.init();
 		LibrarianBookRenderer.init();
 		ScribeKeys.init();
+		ScribePack.init();
 	}
 }

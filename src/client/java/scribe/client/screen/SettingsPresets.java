@@ -44,6 +44,7 @@ public final class SettingsPresets {
 		switch (preset) {
 			case WRITER -> {
 				out.put("writing_only", false);
+				out.put("writing_utilities", true);
 				screens(out, true);
 				out.put("running_header", true);
 				out.put("saved_message", true);
@@ -58,6 +59,7 @@ public final class SettingsPresets {
 			}
 			case READER -> {
 				out.put("writing_only", false);
+				out.put("writing_utilities", true);
 				screens(out, true);
 				out.put("running_header", true);
 				out.put("saved_message", false);
@@ -72,6 +74,7 @@ public final class SettingsPresets {
 			}
 			case VANILLA -> {
 				out.put("writing_only", true);
+				out.put("writing_utilities", true);
 				out.put("replace_editor", true);
 				out.put("replace_reader", true);
 				out.put("replace_lectern", true);

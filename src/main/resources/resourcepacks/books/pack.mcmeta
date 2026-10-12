@@ -1,0 +1,10 @@
+{
+  "pack": {
+    "description": {
+      "translate": "scribe.pack.description",
+      "fallback": "Book icons and books in chiseled bookshelves."
+    },
+    "min_format": 97,
+    "max_format": 97
+  }
+}

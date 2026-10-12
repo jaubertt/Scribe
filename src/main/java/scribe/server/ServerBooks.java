@@ -104,8 +104,8 @@ public final class ServerBooks {
 	public static int features() {
 		ScribeConfig config = ScribeConfig.get();
 		int flags = 0;
-		if (config.allowPenNames) flags |= Payloads.ServerFeatures.PEN_NAMES;
-		if (config.allowSubtitles) flags |= Payloads.ServerFeatures.SUBTITLES;
+		if (config.penNamesOn()) flags |= Payloads.ServerFeatures.PEN_NAMES;
+		if (config.subtitlesOn()) flags |= Payloads.ServerFeatures.SUBTITLES;
 		if (config.lecternEditingOn()) flags |= Payloads.ServerFeatures.LECTERN_EDITING;
 		if (config.sharedReadingPoseOn()) flags |= Payloads.ServerFeatures.READING_POSE;
 		if (config.bookInfoOn()) flags |= Payloads.ServerFeatures.BOOK_INFO;
@@ -113,9 +113,9 @@ public final class ServerBooks {
 		if (config.enchantedLecternsOn()) flags |= Payloads.ServerFeatures.ENCHANTED_LECTERNS;
 		if (config.bookbindingOn()) flags |= Payloads.ServerFeatures.BOOKBINDING;
 		if (config.closedLecternsOn()) flags |= Payloads.ServerFeatures.CLOSED_LECTERNS;
-		if (config.signFormatting) flags |= Payloads.ServerFeatures.SIGN_FORMATTING;
+		if (config.signFormattingOn()) flags |= Payloads.ServerFeatures.SIGN_FORMATTING;
 		if (config.placeableBooksOn()) flags |= Payloads.ServerFeatures.PLACED_BOOKS;
-		if (config.linkContents) flags |= Payloads.ServerFeatures.CONTENTS_LINKS;
+		if (config.contentsLinksOn()) flags |= Payloads.ServerFeatures.CONTENTS_LINKS;
 		if (config.bookDyeingOn()) flags |= Payloads.ServerFeatures.BOOK_DYEING;
 		if (config.tableDyeingOn()) flags |= Payloads.ServerFeatures.TABLE_DYEING;
 		if (config.readingLibrariansOn()) flags |= Payloads.ServerFeatures.READING_LIBRARIANS;
@@ -168,11 +168,11 @@ public final class ServerBooks {
 		SavedDetails.remove(written);
 		ScribeConfig config = ScribeConfig.get();
 		WrittenBookContent content = written.get(DataComponents.WRITTEN_BOOK_CONTENT);
-		if (content != null && details.hasPenName() && config.allowPenNames) {
+		if (content != null && details.hasPenName() && config.penNamesOn()) {
 			written.set(DataComponents.WRITTEN_BOOK_CONTENT,
 				new WrittenBookContent(content.title(), details.penName(), content.generation(), content.pages(), content.resolved()));
 		}
-		if (details.hasSubtitle() && config.allowSubtitles) {
+		if (details.hasSubtitle() && config.subtitlesOn()) {
 			addSubtitle(written, details.subtitle());
 		}
 		applyDesign(written, details);
@@ -181,7 +181,7 @@ public final class ServerBooks {
 
 	public static ItemStack linkContents(ItemStack written) {
 		WrittenBookContent content = written.get(DataComponents.WRITTEN_BOOK_CONTENT);
-		if (content != null && ScribeConfig.get().linkContents) {
+		if (content != null && ScribeConfig.get().contentsLinksOn()) {
 			WrittenBookContent linked = ContentsLinks.link(content);
 			if (linked != content) {
 				written.set(DataComponents.WRITTEN_BOOK_CONTENT, linked);
@@ -435,11 +435,11 @@ public final class ServerBooks {
 		ItemStack before = book.copy();
 		boolean scribeName = hasNameInColor(book);
 		String shown = content.author();
-		if (config.allowPenNames) {
+		if (config.penNamesOn()) {
 			shown = details.hasPenName() ? details.penName() : authorName;
 		}
 		book.set(DataComponents.WRITTEN_BOOK_CONTENT, new WrittenBookContent(cleanTitle, shown, content.generation(), content.pages(), content.resolved()));
-		if (config.allowSubtitles) {
+		if (config.subtitlesOn()) {
 			setSubtitle(book, details.subtitle());
 		}
 		boolean colorChosen = false;
@@ -590,7 +590,7 @@ public final class ServerBooks {
 			return SaveResult.NOT_A_BOOK;
 		}
 		ScribeConfig config = ScribeConfig.get();
-		return SavedDetails.write(book, details.taken(config.allowSubtitles, config.allowPenNames)) ? SaveResult.SAVED : SaveResult.UNCHANGED;
+		return SavedDetails.write(book, details.taken(config.subtitlesOn(), config.penNamesOn())) ? SaveResult.SAVED : SaveResult.UNCHANGED;
 	}
 
 	private static void editOnLectern(ServerPlayer player, Payloads.LecternEdit payload) {

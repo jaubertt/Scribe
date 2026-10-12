@@ -15,6 +15,7 @@ Writing utilities and book customization. Write, format and read books with chap
 
 - src/main: everything that also runs on servers (colored books, lecterns, signing with pen names and subtitles, editing on lecterns, reading animation, book info for look-at tooltips).
 - src/client: the book screens, files, bookmarks, symbols, tooltips and rendering.
+- src/main/resources/resourcepacks/books: Scribe's own resource pack (book icons and the books in chiseled bookshelves), listed in the game's Resource Packs so players can move it or turn it off.
 - libs/modmenu-api-stub.jar: two interfaces of Mod Menu's API, used only to compile. They are left out of every jar; the real ones come from Mod Menu when it is installed. Mod Menu is MIT licensed (libs/MODMENU-LICENSE.txt).
 
 ## Issues
