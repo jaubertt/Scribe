@@ -7,7 +7,7 @@ Writing utilities and book customization. Write, format and read books with chap
 
 ## Requirements
 
-- Fabric Loader 0.19.5 or newer
+- Fabric API
 - Optional: Mod Menu, for a settings button in the mod list
 
 
